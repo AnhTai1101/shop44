@@ -1,6 +1,6 @@
 <?php $this->layout = "views/backend/layout.php"; ?>
 <div class="container">
-    <form class="info-product" action="index.php?area=backend&controller=product&action=edit" method="POST">
+    <form class="info-product" action="index.php?area=backend&controller=product&action=go_edit" method="POST">
         <div class="form-group">
             <label for="id">ID sản phẩm</label>
             <input type="number" class="form-control" value="<?php echo $info_product[0]->id; ?>" id="id" name="id">

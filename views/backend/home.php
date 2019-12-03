@@ -360,12 +360,12 @@
                                                 <td><?php echo $list_product->name; ?></td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="index.php?area=backend&controller=home&action=edit&id=<?php echo $list_product->id; ?>">
+                                                        <a href="index.php?area=backend&controller=product&action=edit&id=<?php echo $list_product->id; ?>">
                                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                         </a>
-                                                        <a href="index.php?area=backend&controller=home&action=delete&id=<?php echo $list_product->id; ?>">
+                                                        <a onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" href="index.php?area=backend&controller=product&action=delete&id=<?php echo $list_product->id; ?>">
                                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
                                                             </button>
