@@ -1,6 +1,6 @@
 <?php $this->layout = "views/backend/layout.php"; ?>
 <div class="container">
-    <form class="info-product" action="index.php?area=backend&controller=product&action=go_edit" method="POST">
+    <form class="info-product" action="index.php?area=backend&controller=product&action=go_edit" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="id">ID sản phẩm</label>
             <input type="number" class="form-control" value="<?php echo $info_product[0]->id; ?>" id="id" name="id">
@@ -54,7 +54,7 @@
         <div class="row" style="margin-top:5px;">
             <div class="col-md-2">Ảnh phụ 1:</div>
             <div class="avatar-wrap col-md-2">
-                    <img src="<?php echo $info_product[0]->image1; ?>" alt="Ảnh chính">
+                    <img src="<?php echo $info_product[0]->image1; ?>" alt="Ảnh phụ 1">
             </div>
             <div class="col-md-8">
                 <input type="file" name="image1">
@@ -63,7 +63,7 @@
         <div class="row" style="margin-top:5px;">
             <div class="col-md-2">Ảnh phụ 2</div>
             <div class="avatar-wrap col-md-2">
-                    <img src="<?php echo $info_product[0]->image2; ?>" alt="Ảnh chính">
+                    <img src="<?php echo $info_product[0]->image2; ?>" alt="Ảnh phụ 2">
             </div>
             <div class="col-md-8">
                 <input type="file" name="image2">

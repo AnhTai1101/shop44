@@ -40,17 +40,154 @@
             // Phân trang
             // insert trừ ảnh
             $conn = Connection::getInstance();
-            $query = $conn->prepare("INSERT INTO product SET category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
+            $query = $conn->prepare("UPDATE product SET category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
             $query->setFetchMode(PDO::FETCH_OBJ);
             $query->execute(array("id"=>$id,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
             // -- 
             // phân trang
-            // insert ảnh chính
-            if($image == ''){
-                $conn = Connection::getInstance();
-                $query = $conn->prepare("INSERT INTO product SET image=:image WHERE id=:id");
-                $query->execute(array("id"=>$id,"image1"=>$image1));
+            $image = '';
+            if(isset($_FILES['image'])){
+                if($_FILES['image']['error'] != 0){
+                    // phan nay de sau viet
+                }else{
+                    // đường dẫn file upload
+                    $file_upload = "assets/upload/product";
+                    // kiểm tra xem nếu file upload chưa được tạo thì ta sẽ tạo ra file upload
+                    if(file_exists($file_upload) == FALSE){
+                        mkdir("$file_upload");
+                    }
+                    // chuyển file vào trong thư mục upload
+                    //-- 
+                    // lấy tên đường dẫn tương đối
+                    $tmpName = $_FILES['image']['tmp_name'];
+                    // tên đường dẫn vật lý
+                    $destination = $file_upload . '/' . time() . '_' . $_FILES['image']['name'];
+                    // lưu file vào đường dẫn vật lý
+                    $upload = move_uploaded_file($tmpName, $destination);
+                    // xét xem nếu lưu thành công thì sẽ làm các bước tiếp theo
+                    //--
+                    // Phân trang
+                    // lấy ảnh cũ để xóa
+                    $image_old = $conn->prepare("SELECT image FROM product WHERE id=:id");
+                    $image_old->setFetchMode(PDO::FETCH_OBJ);
+                    $image_old->execute(array("id"=>$id));
+                    $delete_image = $image_old->fetch();
+                    if(isset($delete_image->image)){
+                        // xóa ảnh cũ
+                        unlink($delete_image->image);
+                    }
+                    // end xóa ảnh cũ
+                    // đưa vào database
+                    if($upload == TRUE){
+                        $image = $destination; 
+                        $query = $conn->prepare("UPDATE product SET image=:image WHERE id=:id");
+                        $query->execute(array("id"=>$id,"image"=>$image));
+                    }
+                    // end database
+                    
+                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
+                    // $query->setFetchMode(PDO::FETCH_OBJ);
+                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
+
+                }
             }
+            // end edit image
+            // phân trang
+            $image1 = '';
+            if(isset($_FILES['image1'])){
+                if($_FILES['image1']['error'] != 0){
+                    // phan nay de sau viet
+                }else{
+                    // đường dẫn file upload
+                    $file_upload = "assets/upload/product";
+                    // kiểm tra xem nếu file upload chưa được tạo thì ta sẽ tạo ra file upload
+                    if(file_exists($file_upload) == FALSE){
+                        mkdir("$file_upload");
+                    }
+                    // chuyển file vào trong thư mục upload
+                    //-- 
+                    // lấy tên đường dẫn tương đối
+                    $tmpName = $_FILES['image1']['tmp_name'];
+                    // tên đường dẫn vật lý
+                    $destination = $file_upload . '/' . time() . '_' . $_FILES['image1']['name'];
+                    // lưu file vào đường dẫn vật lý
+                    $upload = move_uploaded_file($tmpName, $destination);
+                    // xét xem nếu lưu thành công thì sẽ làm các bước tiếp theo
+                    //--
+                    // Phân trang
+                    // lấy ảnh cũ để xóa
+                    $image_old = $conn->prepare("SELECT image1 FROM product WHERE id=:id");
+                    $image_old->setFetchMode(PDO::FETCH_OBJ);
+                    $image_old->execute(array("id"=>$id));
+                    $delete_image = $image_old->fetch();
+                    if(isset($delete_image->image1)){
+                        // xóa ảnh cũ
+                        unlink($delete_image->image1);
+                    }
+                    // end xóa ảnh cũ
+                    // đưa vào database
+                    if($upload == TRUE){
+                        $image1 = $destination; 
+                        $query = $conn->prepare("UPDATE product SET image1=:image1 WHERE id=:id");
+                        $query->execute(array("id"=>$id,"image1"=>$image1));
+                    }
+                    // end database
+                    
+                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
+                    // $query->setFetchMode(PDO::FETCH_OBJ);
+                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
+
+                }
+            }
+            // end edit image
+            // phân trang
+            $image2 = '';
+            if(isset($_FILES['image2'])){
+                if($_FILES['image2']['error'] != 0){
+                    // phan nay de sau viet
+                }else{
+                    // đường dẫn file upload
+                    $file_upload = "assets/upload/product";
+                    // kiểm tra xem nếu file upload chưa được tạo thì ta sẽ tạo ra file upload
+                    if(file_exists($file_upload) == FALSE){
+                        mkdir("$file_upload");
+                    }
+                    // chuyển file vào trong thư mục upload
+                    //-- 
+                    // lấy tên đường dẫn tương đối
+                    $tmpName = $_FILES['image2']['tmp_name'];
+                    // tên đường dẫn vật lý
+                    $destination = $file_upload . '/' . time() . '_' . $_FILES['image2']['name'];
+                    // lưu file vào đường dẫn vật lý
+                    $upload = move_uploaded_file($tmpName, $destination);
+                    // xét xem nếu lưu thành công thì sẽ làm các bước tiếp theo
+                    //--
+                    // Phân trang
+                    // lấy ảnh cũ để xóa
+                    $image_old = $conn->prepare("SELECT image2 FROM product WHERE id=:id");
+                    $image_old->setFetchMode(PDO::FETCH_OBJ);
+                    $image_old->execute(array("id"=>$id));
+                    $delete_image = $image_old->fetch();
+                    if(isset($delete_image->image2)){
+                        // xóa ảnh cũ
+                        unlink($delete_image->image2);
+                    }
+                    // end xóa ảnh cũ
+                    // đưa vào database
+                    if($upload == TRUE){
+                        $image2 = $destination; 
+                        $query = $conn->prepare("UPDATE product SET image2=:image2 WHERE id=:id");
+                        $query->execute(array("id"=>$id,"image2"=>$image2));
+                    }
+                    // end database
+                    
+                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
+                    // $query->setFetchMode(PDO::FETCH_OBJ);
+                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
+
+                }
+            }
+            // end edit image
             // $image1 = isset($_POST['image1']) ? "assets/frontend/images/product/".$_POST['image1'] : '';
             // $image2 = isset($_POST['image2']) ? "assets/frontend/images/product/".$_POST['image2'] : '';
             // $conn = Connection::getInstance();
