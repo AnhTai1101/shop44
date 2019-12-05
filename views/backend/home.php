@@ -283,7 +283,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">data table</h3>
+                                <h3 class="title-5 m-b-35">Danh sách sản phẩm</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
@@ -306,7 +306,7 @@
                                             <i class="zmdi zmdi-filter-list"></i>filters</button>
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <a href="index.php?area=backend&action=add">
+                                        <a href="index.php?area=backend&controller=product&action=add">
                                             <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                             <i class="zmdi zmdi-plus"></i>add item</button>
                                         </a>
@@ -340,8 +340,9 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php foreach($list_product as $list_product): ?>
                                             <tr class="tr-shadow">
-                                            <?php foreach($list_product as $list_product): ?>
+                                            
                                                 <td>
                                                     <label class="au-checkbox">
                                                         <input type="checkbox">

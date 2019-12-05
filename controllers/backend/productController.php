@@ -32,5 +32,10 @@
 			$this->insert_product();
 			header("location:index.php?area=backend");
 		}
+		public function add(){
+			$category = $this->list_category();
+			$info = $this->info();
+			$this->renderHTML("views/backend/add_product.php",array("info"=>$info,"category"=>$category));
+		}
 	}
  ?>
