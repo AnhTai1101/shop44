@@ -3,8 +3,8 @@
     <form class="info-product" action="index.php?area=backend&controller=product&action=go_add" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="id">ID sản phẩm</label>
-            <input type="number" class="form-control" id="id">
-            <?php //print_r($info_product); ?>
+            <input type="number" class="form-control" id="">
+            <?php //print_r($); ?>
         </div>
         <div class="form-group">
             <label for="title">Tên sản phẩm</label>
@@ -60,8 +60,8 @@
                 <input type="file" name="image1">
             </div>
 		</div>
-        <pre><?php //print_r($_FILES); ?></pre>
-        <pre><?php //print_r($_POST); ?></pre>
+        <pre><?php print_r($_FILES); ?></pre>
+        <pre><?php print_r($_POST); ?></pre>
         <div class="row" style="margin-top:5px;">
             <div class="col-md-2">Ảnh phụ 2</div>
             <div class="avatar-wrap col-md-2">

@@ -212,6 +212,29 @@
             // $query->setFetchMode(PDO::FETCH_OBJ);
             // $query->execute(array("id"=>$id,"image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
         }
+        public function inserts_product(){
+            $image = "";
+            $image1 = '';
+            $image2 = '';
+            $category_id = isset($_POST['category_id']) ? $_POST['category_id'] : '';
+            $status = isset($_POST['status']) ? $_POST['status'] : '';
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $date = date('Y/m/d H:i:s');
+            $update_at = $date;
+            $created_at = $date;
+            $title = isset($_POST['title']) ? $_POST['title'] : '';
+            $price = isset($_POST['price']) ? $_POST['price'] : 0;
+            $content = isset($_POST['content']) ? $_POST['content'] : '';
+            $news_id = isset($_POST['news_id']) ? $_POST['news_id'] : 1;
+            $description = isset($_POST['description']) ? $_POST['description'] : '';
+            //-- 
+            // phân trang 
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, created_at=:created_at, category_id=:category_id, status=:status, update_at=:update_at, title=:title, price=:price, content=:content,news_id=:news_id, description=:description");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $error  =  $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
+
+        }
         public function insert_product(){
             // tạo biến toàn cục
             $image = '';

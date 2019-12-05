@@ -25,8 +25,30 @@
             $info = $query->fetchAll();
             return $info;
         }
-        public function list_cart(){
-            
+        public function cart_add(){
+            // Nếu như đã tồn tại sản phẩm trong giỏ hàng ta 
+            $id = isset($_GET['id']) ? $_GET['id'] : 0 ;
+            if(isset($_SESSION['cart'][$id])){
+                $_SESSION['cart'][$id]['number']++;
+            }else{  
+                $conn = Connection::getInstance();
+                $query = $conn->prepare("SELECT * FROM product WHERE id=:id");
+                $query->execute(array("id"=>$id));
+                $query->setFetchMode(PDO::FETCH_OBJ);
+                $product = $query->fetch();
+                // -- 
+                // phân trang
+                $_SESSION['cart'][$id] = array(
+                    "id"=>$id,
+                    "name"=>$product->title,
+                    "price"=>$product->price,
+                    "number"=>1,
+                    "image"=>$product->image,
+                    "image1"=>$product->image1,
+                    "image2"=>$product->image2,
+                    "content"=>$product->content
+                );
+            }
         }
     }
 ?>
