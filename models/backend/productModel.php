@@ -213,7 +213,9 @@
             // $query->execute(array("id"=>$id,"image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
         }
         public function insert_product(){
+            // tạo biến toàn cục
             $image = '';
+            // xét nếu có tồn tại File hay không
             if(isset($_FILES['image'])){
                 if($_FILES['image']['error'] != 0){
                     // nếu như có lỗi trong quá trình up load ta sẽ thông báo ở đây
@@ -312,7 +314,7 @@
             //-- 
             // phân trang 
             $conn = Connection::getInstance();
-            $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, created_at=:created_at, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description");
+            $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, created_at=:created_at, category_id=:category_id, status=:status, update_at=:update_at, title=:title, price=:price, content=:content,news_id=:news_id, description=:description");
             // $query->setFetchMode(PDO::FETCH_OBJ);
             $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
             // $conn = Connection::getInstance();

@@ -60,6 +60,8 @@
                 <input type="file" name="image1">
             </div>
 		</div>
+        <pre><?php //print_r($_FILES); ?></pre>
+        <pre><?php //print_r($_POST); ?></pre>
         <div class="row" style="margin-top:5px;">
             <div class="col-md-2">Ảnh phụ 2</div>
             <div class="avatar-wrap col-md-2">
