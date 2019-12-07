@@ -1,5 +1,5 @@
 <?php
-    include "models/backend/cartModel.php";
+    include "models/frontend/cartModel.php";
     class cartController extends Controller{
         use cartModel;
         /**
@@ -13,9 +13,7 @@
             }
         }
         public function index(){
-            $info = $this->info();
-            $list_cart = $this->list_cart();
-            $this->renderHTML("views/backend/cart.php",array("info"=>$info,"list_cart"=>$list_cart));
+            $this->renderHTML("views/frontend/cart.php");
         }
         public function add(){
             $this->cart_add();
