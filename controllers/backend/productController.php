@@ -31,6 +31,7 @@
 		public function go_add(){
 			$this->insert_product();
 			header("location:index.php?area=backend");
+			// $this->renderHTML("views/backend/error.php", array("error",$error));
 		}
 		public function add(){
 			$category = $this->list_category();

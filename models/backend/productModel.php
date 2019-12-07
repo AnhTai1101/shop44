@@ -101,11 +101,6 @@
                         $query->execute(array("id"=>$id,"image"=>$image));
                     }
                     // end database
-                    
-                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
-                    // $query->setFetchMode(PDO::FETCH_OBJ);
-                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
-
                 }
             }
             // end edit image
@@ -149,11 +144,6 @@
                         $query->execute(array("id"=>$id,"image1"=>$image1));
                     }
                     // end database
-                    
-                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
-                    // $query->setFetchMode(PDO::FETCH_OBJ);
-                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
-
                 }
             }
             // end edit image
@@ -197,20 +187,8 @@
                         $query->execute(array("id"=>$id,"image2"=>$image2));
                     }
                     // end database
-                    
-                    // $query = $conn->prepare("UPDATE product SET image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
-                    // $query->setFetchMode(PDO::FETCH_OBJ);
-                    // $query->execute(array("id"=>$id,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
-
                 }
             }
-            // end edit image
-            // $image1 = isset($_POST['image1']) ? "assets/frontend/images/product/".$_POST['image1'] : '';
-            // $image2 = isset($_POST['image2']) ? "assets/frontend/images/product/".$_POST['image2'] : '';
-            // $conn = Connection::getInstance();
-            // $query = $conn->prepare("UPDATE product SET image=:image, image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description WHERE id=:id");
-            // $query->setFetchMode(PDO::FETCH_OBJ);
-            // $query->execute(array("id"=>$id,"image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description));
         }
         public function inserts_product(){
             $image = "";
@@ -230,10 +208,9 @@
             //-- 
             // phân trang 
             $conn = Connection::getInstance();
-            $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, created_at=:created_at, category_id=:category_id, status=:status, update_at=:update_at, title=:title, price=:price, content=:content,news_id=:news_id, description=:description");
+            $query = $conn->prepare("INSERT INTO product SET created_at=:created_at, image=:image, image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description");
             $query->setFetchMode(PDO::FETCH_OBJ);
-            $error  =  $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
-
+            $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
         }
         public function insert_product(){
             // tạo biến toàn cục
@@ -336,10 +313,17 @@
             $description = isset($_POST['description']) ? $_POST['description'] : '';
             //-- 
             // phân trang 
-            $conn = Connection::getInstance();
-            $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, created_at=:created_at, category_id=:category_id, status=:status, update_at=:update_at, title=:title, price=:price, content=:content,news_id=:news_id, description=:description");
+            // $conn = Connection::getInstance();
+            // $query = $conn->prepare("INSERT INTO product SET image=:image, image1=:image1, image2=:images, category_id=:category_id, status=:status,  update_at=:update_at, title=:title, price=:price, content=:content, news_id=:news_id, description=:description, created_at=:created_at");
             // $query->setFetchMode(PDO::FETCH_OBJ);
+            // $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
+            // --
+            // phân trang
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("INSERT INTO product SET created_at=:created_at, image=:image, image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description");
+            $query->setFetchMode(PDO::FETCH_OBJ);
             $query->execute(array("image"=>$image,"image1"=>$image1,"image2"=>$image2,"category_id"=>$category_id,"status"=>$status,"update_at"=>$update_at,"title"=>$title,"price"=>$price,"content"=>$content,"news_id"=>$news_id,"description"=>$description,"created_at"=>$created_at));
+            //--
             // $conn = Connection::getInstance();
             // $query = $conn->prepare("INSERT INTO product SET created_at=:created_at, image=:image, image1=:image1, image2=:image2, category_id=:category_id, status=:status, update_at=:update_at,title=:title,price=:price,content=:content,news_id=:news_id,description=:description");
             // $query->setFetchMode(PDO::FETCH_OBJ);

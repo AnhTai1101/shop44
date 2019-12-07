@@ -60,14 +60,14 @@
                 <input type="file" name="image1">
             </div>
 		</div>
-        <pre><?php print_r($_FILES); ?></pre>
-        <pre><?php print_r($_POST); ?></pre>
+        <pre><?php //print_r($_FILES); ?></pre>
+        <pre><?php //print_r($_POST); ?></pre>
         <div class="row" style="margin-top:5px;">
             <div class="col-md-2">Ảnh phụ 2</div>
-            <div class="avatar-wrap col-md-2">
+            <div class="avatar-wrap col-md-0">
                 <!-- <img src="" alt="Ảnh phụ 2"> -->
             </div>
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <input type="file" name="image2">
             </div>
 		</div>
