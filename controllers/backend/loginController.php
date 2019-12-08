@@ -14,7 +14,7 @@
 			if(isset($data->email)){
 				//dang nhap thanh cong
 				$_SESSION["email"] = $data->email;				
-				$_SESSION["avatar"] = $data->avatar;				
+				$_SESSION["master_id"] = $data->master_id;		
 			}
 			header("location:index.php?area=backend");//<=>index.php?area=backend&controller=home&action=index
 		}

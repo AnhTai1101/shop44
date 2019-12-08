@@ -452,7 +452,9 @@
             </div>
         </div>
     </section>
-
+    <pre>
+    <?php //print_r($_SESSION); ?>
+    </pre>
     <?php echo $this->view; ?>
 
 
@@ -700,6 +702,13 @@
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
             $(this).on('click', function() {
                 swal(nameProduct, "is added to cart !", "success");
+                var url = 'index.php?area=backend&controller=cart&action=add&id='+$(this).attr('id');
+                var data = {};
+                var success = function(result){
+                    $(this).attr('id');
+                };
+                var dataType = 'text';
+                $.get(url, data, success, dataType);
             });
         });
 

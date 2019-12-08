@@ -5,7 +5,7 @@
             $password = isset($_POST['password']) ? $_POST['password'] : "";
             $password = md5($password);
             $conn = Connection::getInstance();
-            $query = $conn->prepare("select email from user where email=:email and password=:password");
+            $query = $conn->prepare("select email,master_id from user where email=:email and password=:password");
             $query->setFetchMode(PDO::FETCH_OBJ);
             $query->execute(array("email"=>$email,"password"=>$password));
             $result = $query->fetch();
