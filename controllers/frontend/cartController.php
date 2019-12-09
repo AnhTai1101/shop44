@@ -17,7 +17,7 @@
         }
         public function add(){
             $this->cart_add();
-            header("location:index.php?");
+            // header("location:index.php?");
         }
     }
 ?>

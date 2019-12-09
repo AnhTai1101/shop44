@@ -702,10 +702,10 @@
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
             $(this).on('click', function() {
                 swal(nameProduct, "is added to cart !", "success");
-                var url = 'index.php?area=backend&controller=cart&action=add&id='+$(this).attr('id');
+                var url = 'index.php?area=frontend&controller=cart&action=add&id='+$(this).attr('id');
                 var data = {};
                 var success = function(result){
-                    $(this).attr('id');
+                    // $(this). chỗ này để sau viết đi;
                 };
                 var dataType = 'text';
                 $.get(url, data, success, dataType);
