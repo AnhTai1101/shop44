@@ -136,7 +136,7 @@
 								</a>
 
                                 <span class="block2-price m-text6 p-r-5">
-									<?php echo $list_product->price; ?>
+									<?php echo strrev(chop(chunk_split(strrev($list_product->price),3,"."),".")); ?>đ
 								</span>
                             </div>
                         </div>

@@ -25,9 +25,9 @@
             $info = $query->fetchAll();
             return $info;
         }
-        public function cart_add(){
+        public function cart_add($id){
             // Nếu như đã tồn tại sản phẩm trong giỏ hàng ta 
-            $id = isset($_GET['id']) ? $_GET['id'] : 0 ;
+           
             if(isset($_SESSION['cart'][$id])){
                 $_SESSION['cart'][$id]['number']++;
             }else{  
@@ -48,7 +48,8 @@
                     "image2"=>$product->image2,
                     "content"=>$product->content
                 );
-            }
+            };
+            
         }
     }
 ?>

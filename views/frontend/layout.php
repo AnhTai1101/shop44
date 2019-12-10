@@ -132,11 +132,13 @@
 
                     <div class="header-wrapicon2">
                         <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                        <span class="header-icons-noti">0</span>
+                        <span class="header-icons-noti"><?php echo count($_SESSION['cart']); ?></span>
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
                             <ul class="header-cart-wrapitem">
+                                <?php $money=0; ?>
+                                <?php foreach($_SESSION['cart'] as $cart): ?>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
                                         <img src="images/item-cart-01.jpg" alt="IMG">
@@ -144,16 +146,18 @@
 
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
+											<?php echo $cart['name']; ?>
 										</a>
 
                                         <span class="header-cart-item-info">
-											1 x $19.00
+											<?php echo strrev(chop(chunk_split(strrev($cart['price']),3,"."),".")); ?>đ
 										</span>
                                     </div>
                                 </li>
+                                <?php $money = $money + $cart['price']; ?>
+                                <?php endforeach; ?>
 
-                                <li class="header-cart-item">
+                                <!-- <li class="header-cart-item">
                                     <div class="header-cart-item-img">
                                         <img src="images/item-cart-02.jpg" alt="IMG">
                                     </div>
@@ -183,11 +187,11 @@
 											1 x $17.00
 										</span>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
 
                             <div class="header-cart-total">
-                                Total: $75.00
+                                Total: <?php echo strrev(chop(chunk_split(strrev($money),3,"."),".")); ?>.$
                             </div>
 
                             <div class="header-cart-buttons">
@@ -701,14 +705,24 @@
         $('.block2-btn-addcart').each(function() {
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
             $(this).on('click', function() {
-                swal(nameProduct, "is added to cart !", "success");
-                var url = 'index.php?area=frontend&controller=cart&action=add&id='+$(this).attr('id');
-                var data = {};
-                var success = function(result){
-                    // $(this). chỗ này để sau viết đi;
-                };
-                var dataType = 'text';
-                $.get(url, data, success, dataType);
+                $.ajax({
+                    url : "index.php", // gửi ajax đến file index.php
+                    type : "get", // chọn phương thức gửi là get
+                    dateType:"text", // dữ liệu trả về dạng text
+                    data : { // Danh sách các thuộc tính sẽ gửi đi
+                        area : 'frontend',
+                        controller : 'cart',
+                        action : 'add',
+                        id : 5
+                    },
+                    success : function (result){
+                        // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
+                        swal(nameProduct, "is added to cart !", "success");
+                        // $(this).html(result);
+                    }
+                });
+                // $.get('index.php?area=frontend&controller=cart&action=add&id=4');
+                // swal(nameProduct, "is added to cart !", "success");
             });
         });
 

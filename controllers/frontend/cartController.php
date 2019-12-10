@@ -16,8 +16,10 @@
             $this->renderHTML("views/frontend/cart.php");
         }
         public function add(){
-            $this->cart_add();
+            $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
+            $this->cart_add($id);
             // header("location:index.php?");
+            return true;
         }
     }
 ?>
