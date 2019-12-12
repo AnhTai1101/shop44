@@ -17,6 +17,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
+    // tắt debug thì thay sever bằng off
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through gửi qua gmail thì phải sử dụng smtp.gmail.com
@@ -35,7 +36,9 @@ try {
     // $mail->addBCC('bcc@example.com');
 
     // Attachments
-    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    //-- 
+    //- phần này dùng để đính kèm file trong gmail
+    $mail->addAttachment('67915195_522633325158763_6316961057696907264_o.jpg');         // Add attachments
     // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     // Content
