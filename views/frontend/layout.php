@@ -77,7 +77,7 @@
 
             <div class="wrap_header">
                 <!-- Logo -->
-                <a href="index.html" class="logo">
+                <a href="../../index.php" class="logo">
                     <img src="images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
@@ -86,9 +86,9 @@
                     <nav class="menu">
                         <ul class="main_menu">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="../../index.php">Home</a>
                                 <ul class="sub_menu">
-                                    <li><a href="index.html">Homepage V1</a></li>
+                                    <li><a href="../../index.php">Homepage V1</a></li>
                                     <li><a href="home-02.html">Homepage V2</a></li>
                                     <li><a href="home-03.html">Homepage V3</a></li>
                                 </ul>
@@ -132,12 +132,14 @@
 
                     <div class="header-wrapicon2">
                         <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                        <span class="header-icons-noti"><?php echo count($_SESSION['cart']); ?></span>
+                        <span class="header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
                             <ul class="header-cart-wrapitem">
+                            
                                 <?php $money=0; ?>
+                                <?php if(isset($_SESSION['cart'])): ?>
                                 <?php foreach($_SESSION['cart'] as $cart): ?>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
@@ -154,9 +156,11 @@
 										</span>
                                     </div>
                                 </li>
-                                <?php $money = $money + $cart['price']; ?>
+                                <?php $money = $money + $cart['price']; ?>đ
                                 <?php endforeach; ?>
-
+                                <?php else: ?>
+                                <button class="btn-success">Chưa có thông tin trong giỏ hàng</button>
+                                <?php endif; ?>
                                 <!-- <li class="header-cart-item">
                                     <div class="header-cart-item-img">
                                         <img src="images/item-cart-02.jpg" alt="IMG">
@@ -197,7 +201,7 @@
                             <div class="header-cart-buttons">
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="../../index.php?controller=cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
                                 </div>
@@ -218,7 +222,7 @@
         <!-- Header Mobile -->
         <div class="wrap_header_mobile">
             <!-- Logo moblie -->
-            <a href="index.html" class="logo-mobile">
+            <a href="../../index.php" class="logo-mobile">
                 <img src="images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
@@ -355,9 +359,9 @@
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="index.html">Home</a>
+                        <a href="../../index.php">Home</a>
                         <ul class="sub-menu">
-                            <li><a href="index.html">Homepage V1</a></li>
+                            <li><a href="../../index.php">Homepage V1</a></li>
                             <li><a href="home-02.html">Homepage V2</a></li>
                             <li><a href="home-03.html">Homepage V3</a></li>
                         </ul>
@@ -701,19 +705,25 @@
     <!--===============================================================================================-->
     <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript">
+    
         $('.block2-btn-addcart').get()
         $('.block2-btn-addcart').each(function() {
             var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+
+            
             $(this).on('click', function() {
+                // console.log(window.location.pathname)
+                // return false;
+
                 $.ajax({
-                    url : "index.php", // gửi ajax đến file index.php
+                    url : window.location.pathname,
                     type : "get", // chọn phương thức gửi là get
                     dateType:"text", // dữ liệu trả về dạng text
                     data : { // Danh sách các thuộc tính sẽ gửi đi
                         area : 'frontend',
                         controller : 'cart',
                         action : 'add',
-                        id : 5
+                        id : $(this).attr('id')
                     },
                     success : function (result){
                         // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về

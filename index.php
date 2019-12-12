@@ -1,4 +1,5 @@
 <?php 
+// ajax goi den file nay a e ?
 	//start session
 	session_start();
 	//include file config.php

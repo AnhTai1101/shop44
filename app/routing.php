@@ -1,5 +1,6 @@
 <?php 
 	//tao cac bien mac dinh
+	// include từ file này ạ
 	$area = "frontend";
 	$controller = "home";
 	$action = "index";

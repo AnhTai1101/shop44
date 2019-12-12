@@ -13,12 +13,15 @@
             }
         }
         public function index(){
-            $this->renderHTML("views/frontend/cart.php");
+            $info = $this->info();
+            $this->renderHTML("views/frontend/cart.php",array("info"=>$info));
         }
         public function add(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
-            $this->cart_add($id);
-            // header("location:index.php?");
+            // nếu như tồn tại thì chạy hàm còn không thì bỏ
+            if($id > 0){
+                $this->cart_add($id);
+            }
             return true;
         }
     }
