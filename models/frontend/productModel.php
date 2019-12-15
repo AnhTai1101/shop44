@@ -1,7 +1,7 @@
 <?php
     trait productModel{
         public function info_product(){
-            $id = isset($_GET['id']) ? $_GET['id'] : 1;
+            $id = isset($_GET['id']) ? $_GET['id'] : 0;
             $conn = Connection::getInstance();
             $query = $conn->prepare("select * from product where id=:id");
             $query->setFetchMode(PDO::FETCH_OBJ);
@@ -9,5 +9,6 @@
             $info = $query->fetchAll();
             return $info;
         }
+
     } 
 ?>

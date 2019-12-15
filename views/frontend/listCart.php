@@ -1,9 +1,6 @@
-<?php  
-    $this->layout = "views/frontend/layout.php";
-?>
-	
-	<!-- Cart -->
-	<section class="cart bgwhite p-t-70 p-b-100">
+<?php $this->layout = "views/frontend/layout.php"; ?>
+<!-- Cart -->
+<section class="cart bgwhite p-t-70 p-b-100">
 		<div class="container">
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
@@ -15,35 +12,33 @@
 							<th class="column-3">Price</th>
 							<th class="column-4 p-l-70">Quantity</th>
 							<th class="column-5">Total</th>
-                        </tr>
-                        <?php $total = 0; ?>
-                        <?php foreach($_SESSION['cart'] as $cart): ?>
+						</tr>
+
 						<tr class="table-row">
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="../../<?php echo $cart['image']; ?>" alt="IMG-PRODUCT">
+									<img src="images/item-10.jpg" alt="IMG-PRODUCT">
 								</div>
 							</td>
-							<td class="column-2"><?php echo $cart['name']; ?></td>
-							<td class="column-3"><?php echo strrev(chop(chunk_split(strrev($cart['price']),3,"."),".")); ?>đ</td>
+							<td class="column-2">Men Tshirt</td>
+							<td class="column-3">$36.00</td>
 							<td class="column-4">
 								<div class="flex-w bo5 of-hidden w-size17">
 									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 									</button>
 
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="<?php echo $cart['number']; ?>">
+									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="1">
 
 									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
 										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 									</button>
 								</div>
 							</td>
-                            <td class="column-5"><?php echo strrev(chop(chunk_split(strrev($cart['number']*$cart['price']),3,"."),".")); ?>đ</td>
-                            <?php $total = $total + $cart['number']*$cart['price']; ?>
+							<td class="column-5">$36.00</td>
 						</tr>
-                        <?php endforeach; ?>
-						<!--  <tr class="table-row">
+
+						<tr class="table-row">
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
 									<img src="images/item-05.jpg" alt="IMG-PRODUCT">
@@ -65,7 +60,7 @@
 								</div>
 							</td>
 							<td class="column-5">$16.00</td>
-						</tr> -->
+						</tr>
 					</table>
 				</div>
 			</div>
@@ -105,7 +100,7 @@
 					</span>
 
 					<span class="m-text21 w-size20 w-full-sm">
-						<?php echo strrev(chop(chunk_split(strrev($total),3,"."),".")); ?>đ
+						$39.00
 					</span>
 				</div>
 

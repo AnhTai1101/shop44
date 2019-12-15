@@ -19,10 +19,12 @@
         public function add(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
             // nếu như tồn tại thì chạy hàm còn không thì bỏ
+            $number = 0;
             if($id > 0){
-                $this->cart_add($id);
+                $number = $this->cart_add($id);
             }
-            return true;
+            return $number;
+            // print_r($number);
         }
     }
 ?>

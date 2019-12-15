@@ -103,7 +103,7 @@
                 </h3>
             </div>
             <pre>
-                <?php print_r($_SESSION); ?>
+                <?php //print_r($_SESSION); ?>
             </pre>
             <!-- Slide2 -->
             <div class="wrap-slick2">
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="../../index.php?controller=product&action=productDetail&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
 									<?php echo $list_product->title; ?>
 								</a>
 

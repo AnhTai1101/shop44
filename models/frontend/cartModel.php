@@ -27,7 +27,6 @@
         }
         public function cart_add($id){
             // Nếu như đã tồn tại sản phẩm trong giỏ hàng ta 
-           
             if(isset($_SESSION['cart'][$id])){
                 $_SESSION['cart'][$id]['number']++;
             }else{  
@@ -49,7 +48,12 @@
                     "content"=>$product->content
                 );
             };
-            
+            // $cart = $_SESSION['cart'][$id];
+            $number = count($_SESSION['cart']);
+            // foreach($_SESSION['cart'] as $cart){
+            //     $number = $number + $cart['number'];
+            // }
+            return $number;
         }
     }
 ?>
