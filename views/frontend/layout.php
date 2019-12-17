@@ -77,7 +77,7 @@
 
             <div class="wrap_header">
                 <!-- Logo -->
-                <a href="../../index.php" class="logo">
+                <a href="../../" class="logo">
                     <img src="images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
@@ -666,6 +666,22 @@
         function show_login(){
             $('.fix').toggle(500);
         };
+        $('#thaydoi').click(function(){
+        $.ajax({
+            url : window.location.pathname,
+            type : "get",
+            dateType : "text",
+            data : {
+                area : 'frontend',
+                controller : 'test',
+                action : 'test',
+                id : 5
+            },
+            success : function(result){
+                $('#thaydoi').text(result);
+            }
+        });
+    });
     </script>
 
     <!--===============================================================================================-->

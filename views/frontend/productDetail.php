@@ -1,8 +1,8 @@
 <?php $this->layout = "views/frontend/layout.php"; ?>
 <!-- breadcrumb -->
-<pre>
+<!-- <pre>
     <?php //print_r($infoProduct); ?>
-</pre>
+</pre> -->
 <div class="bread-crumb bgwhite flex-w p-l-52 p-r-15 p-t-30 p-l-15-sm">
     <a href="index.html" class="s-text16">
         Home
@@ -59,7 +59,7 @@
             </h4>
 
             <span class="m-text17">
-            <?php echo strrev(chop(chunk_split(strrev($infoProduct[0]->price),3,"."),".")); ?>đ
+            Giá:  <?php echo strrev(chop(chunk_split(strrev($infoProduct[0]->price),3,"."),".")); ?>đ
             </span>
 
             <p class="s-text8 p-t-10">
