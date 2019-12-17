@@ -77,7 +77,7 @@
 
             <div class="wrap_header">
                 <!-- Logo -->
-                <a href="index.php" class="logo">
+                <a href="trangchu.html" class="logo">
                     <img src="assets/frontend/images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
@@ -86,9 +86,9 @@
                     <nav class="menu">
                         <ul class="main_menu">
                             <li>
-                                <a href="index.php">Trang chủ</a>
+                                <a href="trangchu.html">Trang chủ</a>
                                 <ul class="sub_menu">
-                                    <li><a href="index.php">Trang chủ V1</a></li>
+                                    <li><a href="trangchu.html">Trang chủ V1</a></li>
                                     <li><a href="home-02.html">Trang chủ V2</a></li>
                                     <li><a href="home-03.html">Trang chủ V3</a></li>
                                 </ul>
@@ -129,13 +129,53 @@
                     <img onclick="show_login()" src="assets/frontend/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 
                     <span class="linedivide1"></span>
+                    <div class="header-wrapicon2">
+                        <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                        <span id="number-cart" class="header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
+                        <div class="header-cart header-dropdown">
+                        <ul class="header-cart-wrapitem" id="name_cart">
+                            <li class="header-cart-item">
+                                <div class="header-cart-item-img">
+                                    <img src="assets/frontend/images/item-cart-01.jpg" alt="IMG">
+                                </div>
 
-                    <a href="index.php?controller=cart">
-                        <div class="header-wrapicon2">
-                            <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                            <span id="number-cart" class="header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
+                                <div class="header-cart-item-txt">
+                                    <a href="#" class="header-cart-item-name">
+                                        White Shirt With Pleat Detail Back
+                                    </a>
+
+                                    <span class="header-cart-item-info">
+                                        1 x $19.00
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="header-cart-total">
+                            Total: $75.00
                         </div>
-                    </a>
+
+                        <div class="header-cart-buttons">
+                            <div class="header-cart-wrapbtn">
+                                <!-- Button -->
+                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    View Cart
+                                </a>
+                            </div>
+
+                            <div class="header-cart-wrapbtn">
+                                <!-- Button -->
+                                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    Check Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!-- <a href="index.php?controller=cart">
+                    </a> -->
+                    <!-- Header cart noti -->
+                    
                 </div>
             </div>
         </div>
@@ -143,7 +183,7 @@
         <!-- Header Mobile -->
         <div class="wrap_header_mobile">
             <!-- Logo moblie -->
-            <a href="index.php" class="logo-mobile">
+            <a href="trangchu.html" class="logo-mobile">
                 <img src="assets/frontend/images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
@@ -280,9 +320,9 @@
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="index.php">Home</a>
+                        <a href="trangchu.html">Home</a>
                         <ul class="sub-menu">
-                            <li><a href="index.php">Trang chủ V1</a></li>
+                            <li><a href="trangchu.html">Trang chủ V1</a></li>
                             <li><a href="home-02.html">Trang chủ V2</a></li>
                             <li><a href="home-03.html">Trang chủ V3</a></li>
                         </ul>
@@ -639,7 +679,7 @@
                 $.ajax({
                     url : window.location.pathname,
                     type : "get", // chọn phương thức gửi là get
-                    dateType:"text", // dữ liệu trả về dạng text
+                    dateType:"json", // dữ liệu trả về dạng text
                     data : { // Danh sách các thuộc tính sẽ gửi đi
                         area : 'frontend',
                         controller : 'cart',
@@ -649,7 +689,22 @@
                     success : function (result){
                         // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
                         swal(nameProduct, "is added to cart ! ", "success");
-                        $('#number-cart').text(result);
+                        // $('#number-cart').text(result);
+                        var nameCart = JSON.parse(result);
+                        // $('#name_cart').text(console.log(nameCart));
+                        // $('#name_cart').text(nameCart[1].name);
+                        var html = '';
+                        $.each(nameCart , function(key, value) { 
+                            html += '<li class="header-cart-item">';
+                                html += '<div class="header-cart-item-img">';
+                                    html += '<img src="';
+                                        html += value.image;
+                                    html += '" alt="IMG">';
+                                html += '</div>';
+                            html += '</li>';
+                        });
+                        $('#name_cart').html(html);
+
                     }
                 });
                 // $.get('index.php?area=frontend&controller=cart&action=add&id=4');

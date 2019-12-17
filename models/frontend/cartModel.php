@@ -48,12 +48,20 @@
                     "content"=>$product->content
                 );
             };
-            // $cart = $_SESSION['cart'][$id];
-            $number = count($_SESSION['cart']);
+            $cart =$_SESSION['cart'];
+            // $number = count($_SESSION['cart']);
             // foreach($_SESSION['cart'] as $cart){
             //     $number = $number + $cart['number'];
             // }
-            return $number;
+            return $cart;
+        }
+        // tạo hàm xóa mảng trong giỏ hàng
+        public function delete_cart($id){
+            unset($_SESSION['cart'][$id]);
+        }
+        // ham xoa toan bo san pham
+        public function delete_all(){
+            unset($_SESSION['cart']);
         }
     }
 ?>

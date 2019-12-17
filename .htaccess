@@ -4,6 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 #trang chi tiết sản phẩm, vd: chi-tiet-san-pham/note-9/4
 RewriteRule chi-tiet-san-pham/([0-9]+) index.php?controller=product&action=productDetail&id=$1
 RewriteRule gio-hang-cua-ban index.php?controller=cart
+RewriteRule trangchu.html index.php
 #RewriteRule thanh-toan index.php?controller=cart&action=payment
 
 

@@ -19,12 +19,23 @@
         public function add(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
             // nếu như tồn tại thì chạy hàm còn không thì bỏ
-            $number = 0;
-            if($id > 0){
-                $number = $this->cart_add($id);
-            }
-            return $number;
+            // $number = 0;
+            // if($id > 0){
+            //     $number = $this->cart_add($id);
+            // }
+            $cart = $this->cart_add($id);
+            $cart = json_encode($cart);
+            echo $cart;
             // print_r($number);
         }
+        // xoa don hang
+        public function delete(){
+            $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
+            $this->delete_cart($id);
+            // nếu để ajax
+            // return true;
+            // nếu để chạy thường
+            header("location:index.php?controller=cart");
+        } 
     }
 ?>

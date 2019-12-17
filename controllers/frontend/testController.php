@@ -8,6 +8,7 @@
         public function test(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
             $name = $this->cart_add($id);
+            echo $id;
         }
     }
 ?>
