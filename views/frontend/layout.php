@@ -6,38 +6,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <base href="assets/frontend/">
+    <!-- <base href="assets/frontend/"> -->
+    <base href="<?php echo $_SERVER['SCRIPT_NAME']; ?>" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/frontend/css/style.css">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/frontend/images/icons/favicon.png" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/fonts/themify/themify-icons.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/fonts/elegant-font/html-css/style.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/animate/animate.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/animsition/css/animsition.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/slick/slick.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/vendor/lightbox2/css/lightbox.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/css/util.css">
+    <link rel="stylesheet" type="text/css" href="assets/frontend/css/main.css">
     <!--===============================================================================================-->
 </head>
 
@@ -57,13 +58,12 @@
                 </div>
 
                 <span class="topbar-child1">
-					<!-- Miễn phí vận chuyển đối với đơn hàng có giá trị từ 1.000.000đ -->
-					Free shipping for standard order over $100
+					Miễn phí vận chuyển đối với đơn hàng có giá trị từ 1.000.000đ
 				</span>
 
                 <div class="topbar-child2">
                     <span class="topbar-email">
-						fashe@example.com
+						WebShop.com
 					</span>
 
                     <div class="topbar-language rs1-select2">
@@ -77,8 +77,8 @@
 
             <div class="wrap_header">
                 <!-- Logo -->
-                <a href="../../" class="logo">
-                    <img src="images/icons/logo.png" alt="IMG-LOGO">
+                <a href="index.php" class="logo">
+                    <img src="assets/frontend/images/icons/logo.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu -->
@@ -86,11 +86,11 @@
                     <nav class="menu">
                         <ul class="main_menu">
                             <li>
-                                <a href="../../index.php">Home</a>
+                                <a href="index.php">Trang chủ</a>
                                 <ul class="sub_menu">
-                                    <li><a href="../../index.php">Homepage V1</a></li>
-                                    <li><a href="home-02.html">Homepage V2</a></li>
-                                    <li><a href="home-03.html">Homepage V3</a></li>
+                                    <li><a href="index.php">Trang chủ V1</a></li>
+                                    <li><a href="home-02.html">Trang chủ V2</a></li>
+                                    <li><a href="home-03.html">Trang chủ V3</a></li>
                                 </ul>
                             </li>
 
@@ -103,19 +103,19 @@
                             </li>
 
                             <li>
-                                <a href="cart.html">Features</a>
+                                <a href="cart.html">Giỏ hàng</a>
                             </li>
 
                             <li>
-                                <a href="blog.html">Blog</a>
+                                <a href="blog.html">Bài viết</a>
                             </li>
 
                             <li>
-                                <a href="about.html">About</a>
+                                <a href="about.html">Thông tin thêm</a>
                             </li>
 
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="contact.html">Địa chỉ</a>
                             </li>
                         </ul>
                     </nav>
@@ -126,13 +126,13 @@
                     <a id="show_login" href="#" class="header-wrapicon1 dis-block">
                         <!-- <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON"> -->
                     </a>
-                    <img onclick="show_login()" src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                    <img onclick="show_login()" src="assets/frontend/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
 
                     <span class="linedivide1"></span>
 
-                    <a href="../../index.php?controller=cart">
+                    <a href="index.php?controller=cart">
                         <div class="header-wrapicon2">
-                            <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                             <span id="number-cart" class="header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
                         </div>
                     </a>
@@ -143,8 +143,8 @@
         <!-- Header Mobile -->
         <div class="wrap_header_mobile">
             <!-- Logo moblie -->
-            <a href="../../index.php" class="logo-mobile">
-                <img src="images/icons/logo.png" alt="IMG-LOGO">
+            <a href="index.php" class="logo-mobile">
+                <img src="assets/frontend/images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
             <!-- Button show menu -->
@@ -152,13 +152,13 @@
                 <!-- Header Icon mobile -->
                 <div class="header-icons-mobile">
                     <a href="#" class="header-wrapicon1 dis-block">
-                        <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+                        <img src="assets/frontend/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
                     </a>
 
                     <span class="linedivide2"></span>
 
                     <div class="header-wrapicon2">
-                        <img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                        <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
                         <span class="header-icons-noti">0</span>
 
                         <!-- Header cart noti -->
@@ -166,7 +166,7 @@
                             <ul class="header-cart-wrapitem">
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="images/item-cart-01.jpg" alt="IMG">
+                                        <img src="assets/frontend/images/item-cart-01.jpg" alt="IMG">
                                     </div>
 
                                     <div class="header-cart-item-txt">
@@ -182,7 +182,7 @@
 
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="images/item-cart-02.jpg" alt="IMG">
+                                        <img src="assets/frontend/images/item-cart-02.jpg" alt="IMG">
                                     </div>
 
                                     <div class="header-cart-item-txt">
@@ -198,7 +198,7 @@
 
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="images/item-cart-03.jpg" alt="IMG">
+                                        <img src="assets/frontend/images/item-cart-03.jpg" alt="IMG">
                                     </div>
 
                                     <div class="header-cart-item-txt">
@@ -250,7 +250,7 @@
                 <ul class="main-menu">
                     <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
                         <span class="topbar-child1">
-							Free shipping for standard order over $100
+							Miễn phí ship đối với những đơn hàng nào có giá trị trên 1.000.000đ
 						</span>
                     </li>
 
@@ -280,11 +280,11 @@
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="../../index.php">Home</a>
+                        <a href="index.php">Home</a>
                         <ul class="sub-menu">
-                            <li><a href="../../index.php">Homepage V1</a></li>
-                            <li><a href="home-02.html">Homepage V2</a></li>
-                            <li><a href="home-03.html">Homepage V3</a></li>
+                            <li><a href="index.php">Trang chủ V1</a></li>
+                            <li><a href="home-02.html">Trang chủ V2</a></li>
+                            <li><a href="home-03.html">Trang chủ V3</a></li>
                         </ul>
                         <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
                     </li>
@@ -321,10 +321,10 @@
     <section class="slide1">
         <div class="wrap-slick1">
             <div class="slick1">
-                <div class="item-slick1 item1-slick1" style="background-image: url(images/master-slide-02.jpg);">
+                <div class="item-slick1 item1-slick1" style="background-image: url(assets/frontend/images/master-slide-02.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                         <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-							Women Collection 2018
+							Sản phẩm bán chạy mùa hè 2019
 						</span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
@@ -333,17 +333,17 @@
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
                             <!-- Button -->
-                            <a href="../../index.php?controller=product" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Shop Now
+                            <a href="index.php?controller=product" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+								Shop
 							</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="item-slick1 item2-slick1" style="background-image: url(images/master-slide-03.jpg);">
+                <div class="item-slick1 item2-slick1" style="background-image: url(assets/frontend/images/master-slide-03.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                         <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
-							Women Collection 2018
+                        Sản phẩm bán chạy mùa hè 2019 
 						</span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
@@ -359,10 +359,10 @@
                     </div>
                 </div>
 
-                <div class="item-slick1 item3-slick1" style="background-image: url(images/master-slide-04.jpg);">
+                <div class="item-slick1 item3-slick1" style="background-image: url(assets/frontend/images/master-slide-04.jpg);">
                     <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                         <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Women Collection 2018
+                        Sản phẩm bán chạy mùa hè 2019 
 						</span>
 
                         <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
@@ -530,23 +530,23 @@
 
         <div class="t-center p-l-15 p-r-15">
             <a href="#">
-                <img class="h-size2" src="images/icons/paypal.png" alt="IMG-PAYPAL">
+                <img class="h-size2" src="assets/frontend/images/icons/paypal.png" alt="IMG-PAYPAL">
             </a>
 
             <a href="#">
-                <img class="h-size2" src="images/icons/visa.png" alt="IMG-VISA">
+                <img class="h-size2" src="assets/frontend/images/icons/visa.png" alt="IMG-VISA">
             </a>
 
             <a href="#">
-                <img class="h-size2" src="images/icons/mastercard.png" alt="IMG-MASTERCARD">
+                <img class="h-size2" src="assets/frontend/images/icons/mastercard.png" alt="IMG-MASTERCARD">
             </a>
 
             <a href="#">
-                <img class="h-size2" src="images/icons/express.png" alt="IMG-EXPRESS">
+                <img class="h-size2" src="assets/frontend/images/icons/express.png" alt="IMG-EXPRESS">
             </a>
 
             <a href="#">
-                <img class="h-size2" src="images/icons/discover.png" alt="IMG-DISCOVER">
+                <img class="h-size2" src="assets/frontend/images/icons/discover.png" alt="IMG-DISCOVER">
             </a>
 
             <div class="t-center s-text8 p-t-20">
@@ -568,7 +568,7 @@
     <div id="dropDownSelect1"></div>
     <div class="fix ">
         <h2>Horizontal form</h2>
-        <form class="form-horizontal" action="../../index.php?area=backend&controller=login&action=login" method="POST">
+        <form class="form-horizontal" action="index.php?area=backend&controller=login&action=login" method="POST">
             <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email:</label>
             <div class="col-sm-10">
@@ -602,14 +602,14 @@
 
 
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
-    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/bootstrap/js/popper.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/select2/select2.min.js"></script>
     <script type="text/javascript">
         $(".selection-1").select2({
             minimumResultsForSearch: 20,
@@ -617,14 +617,14 @@
         });
     </script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-    <script type="text/javascript" src="js/slick-custom.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/js/slick-custom.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/lightbox2/js/lightbox.min.js"></script>
     <!--===============================================================================================-->
-    <script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+    <script type="text/javascript" src="assets/frontend/vendor/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript">
     
         $('.block2-btn-addcart').get()
@@ -685,7 +685,7 @@
     </script>
 
     <!--===============================================================================================-->
-    <script src="js/main.js"></script>
+    <script src="assets/frontend/js/main.js"></script>
 
 </body>
 

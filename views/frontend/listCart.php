@@ -17,7 +17,7 @@
 						<tr class="table-row">
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/item-10.jpg" alt="IMG-PRODUCT">
+									<img src="assets/frontend/images/item-10.jpg" alt="IMG-PRODUCT">
 								</div>
 							</td>
 							<td class="column-2">Men Tshirt</td>
@@ -41,7 +41,7 @@
 						<tr class="table-row">
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
-									<img src="images/item-05.jpg" alt="IMG-PRODUCT">
+									<img src="assets/frontend/images/item-05.jpg" alt="IMG-PRODUCT">
 								</div>
 							</td>
 							<td class="column-2">Mug Adventure</td>

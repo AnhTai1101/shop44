@@ -21,8 +21,9 @@
 		}
 		public function edit(){
 			$info_product = $this->info_product();
+			$category = $this->list_category();
 			$info = $this->info();
-			$this->renderHTML("views/backend/info_product.php",array("info_product"=>$info_product,"info"=>$info));
+			$this->renderHTML("views/backend/info_product.php",array("info_product"=>$info_product,"info"=>$info,"category"=>$category));
 		}
 		public function go_edit(){
             $this->edit_product();

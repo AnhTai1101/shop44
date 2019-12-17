@@ -6,50 +6,24 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-02.jpg" alt="IMG-BENNER">
+                        <img src="assets/frontend/images/banner-02.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
                             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Dresses
+								Váy đầm
 							</a>
                         </div>
                     </div>
 
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-05.jpg" alt="IMG-BENNER">
+                        <img src="assets/frontend/images/banner-05.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
                             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Sunglasses
-							</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-03.jpg" alt="IMG-BENNER">
-
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Watches
-							</a>
-                        </div>
-                    </div>
-
-                    <!-- block1 -->
-                    <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-07.jpg" alt="IMG-BENNER">
-
-                        <div class="block1-wrapbtn w-size2">
-                            <!-- Button -->
-                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-								Thick
+								Kính mắt
 							</a>
                         </div>
                     </div>
@@ -58,33 +32,59 @@
                 <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
                     <!-- block1 -->
                     <div class="block1 hov-img-zoom pos-relative m-b-30">
-                        <img src="images/banner-04.jpg" alt="IMG-BENNER">
+                        <img src="assets/frontend/images/banner-03.jpg" alt="IMG-BENNER">
 
                         <div class="block1-wrapbtn w-size2">
                             <!-- Button -->
                             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-									Backpack
+								Đồng hồ
+							</a>
+                        </div>
+                    </div>
+
+                    <!-- block1 -->
+                    <div class="block1 hov-img-zoom pos-relative m-b-30">
+                        <img src="assets/frontend/images/banner-07.jpg" alt="IMG-BENNER">
+
+                        <div class="block1-wrapbtn w-size2">
+                            <!-- Button -->
+                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+								Giày
+							</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+                    <!-- block1 -->
+                    <div class="block1 hov-img-zoom pos-relative m-b-30">
+                        <img src="assets/frontend/images/banner-04.jpg" alt="IMG-BENNER">
+
+                        <div class="block1-wrapbtn w-size2">
+                            <!-- Button -->
+                            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+									Balo
 							</a>
                         </div>
                     </div>
 
                     <!-- block2 -->
                     <div class="block2 wrap-pic-w pos-relative m-b-30">
-                        <img src="images/icons/bg-01.jpg" alt="IMG">
+                        <img src="assets/frontend/images/icons/bg-01.jpg" alt="IMG">
 
                         <div class="block2-content sizefull ab-t-l flex-col-c-m">
                             <h4 class="m-text4 t-center w-size3 p-b-8">
-                                Sign up & get 20% off
+                                Đăng nhập để có thể được giảm giá tới 10%
                             </h4>
 
                             <p class="t-center w-size4">
-                                Be the frist to know about the latest fashion news and get exclu-sive offers
+                               Hãy là người đầu tiên biết tới những khuyến mại của chúng tôi
                             </p>
 
                             <div class="w-size2 p-t-25">
                                 <!-- Button -->
                                 <a href="#" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-									Sign Up
+									Đăng nhập
 								</a>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
         <div class="container">
             <div class="sec-title p-b-60">
                 <h3 class="m-text5 t-center">
-                    Featured Products
+                    Những sản phẩm nổi bật
                 </h3>
             </div>
             <pre>
@@ -113,7 +113,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                <img src="../../<?php echo $list_product->image; ?>" alt="IMG-PRODUCT">
+                                <img src="<?php echo $list_product->image; ?>" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&action=productDetail&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&action=productDetail&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
 									<?php echo $list_product->title; ?>
 								</a>
 
@@ -146,7 +146,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="images/item-03.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-03.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -164,7 +164,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=2" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=2" class="block2-name dis-block s-text3 p-b-5">
 									Denim jacket blue
 								</a>
 
@@ -179,7 +179,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="images/item-05.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-05.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -197,7 +197,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=3" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=3" class="block2-name dis-block s-text3 p-b-5">
 									Coach slim easton black
 								</a>
 
@@ -212,7 +212,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                                <img src="images/item-07.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-07.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -230,7 +230,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
 									Frayed denim shorts
 								</a>
 
@@ -249,7 +249,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                <img src="images/item-02.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-02.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -267,7 +267,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
 									Herschel supply co 25l
 								</a>
 
@@ -282,7 +282,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="images/item-03.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-03.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -300,7 +300,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
 									Denim jacket blue
 								</a>
 
@@ -315,7 +315,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="images/item-05.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-05.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -333,7 +333,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
 									Coach slim easton black
 								</a>
 
@@ -348,7 +348,7 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelsale">
-                                <img src="images/item-07.jpg" alt="IMG-PRODUCT">
+                                <img src="assets/frontend/images/item-07.jpg" alt="IMG-PRODUCT">
 
                                 <div class="block2-overlay trans-0-4">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -366,7 +366,7 @@
                             </div>
 
                             <div class="block2-txt p-t-20">
-                                <a href="../../index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="block2-name dis-block s-text3 p-b-5">
 									Frayed denim shorts
 								</a>
 
@@ -392,19 +392,19 @@
             <div class="row">
                 <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
                     <div class="hov-img-zoom pos-relative">
-                        <img src="images/banner-08.jpg" alt="IMG-BANNER">
+                        <img src="assets/frontend/images/banner-08.jpg" alt="IMG-BANNER">
 
                         <div class="ab-t-l sizefull flex-col-c-m p-l-15 p-r-15">
                             <span class="m-text9 p-t-45 fs-20-sm">
-								The Beauty
+								Sản phẩm đẹp
 							</span>
 
                             <h3 class="l-text1 fs-35-sm">
-                                Lookbook
+                                Đặt hàng
                             </h3>
 
                             <a href="#" class="s-text4 hov2 p-t-20 ">
-								View Collection
+								Xem sản phẩm
 							</a>
                         </div>
                     </div>
@@ -412,11 +412,11 @@
 
                 <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
                     <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
-                        <img src="images/shop-item-09.jpg" alt="IMG-BANNER">
+                        <img src="assets/frontend/images/shop-item-09.jpg" alt="IMG-BANNER">
 
                         <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
                             <div class="t-center">
-                                <a href="../../index.php?controller=product&id=1" class="dis-block s-text3 p-b-5">
+                                <a href="index.php?controller=product&id=1" class="dis-block s-text3 p-b-5">
 									Gafas sol Hawkers one
 								</a>
 
@@ -483,7 +483,7 @@
         <div class="container">
             <div class="sec-title p-b-52">
                 <h3 class="m-text5 t-center">
-                    Our Blog
+                    Những bài viết bạn nên biết
                 </h3>
             </div>
 
@@ -492,18 +492,18 @@
                     <!-- Block3 -->
                     <div class="block3">
                         <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                            <img src="images/blog-01.jpg" alt="IMG-BLOG">
+                            <img src="assets/frontend/images/blog-01.jpg" alt="IMG-BLOG">
                         </a>
 
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-									Black Friday Guide: Best Sales & Discount Codes
+									Thứ 6 ngày 13: Best sale
 								</a>
                             </h4>
 
-                            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-                            <span class="s-text6">on</span> <span class="s-text7">July 22, 2017</span>
+                            <span class="s-text6">Bởi</span> <span class="s-text7">Admin 1</span>
+                            <span class="s-text6">vào</span> <span class="s-text7">July 22, 2019</span>
 
                             <p class="s-text8 p-t-16">
                                 Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames
@@ -516,7 +516,7 @@
                     <!-- Block3 -->
                     <div class="block3">
                         <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                            <img src="images/blog-02.jpg" alt="IMG-BLOG">
+                            <img src="assets/frontend/images/blog-02.jpg" alt="IMG-BLOG">
                         </a>
 
                         <div class="block3-txt p-t-14">
@@ -540,7 +540,7 @@
                     <!-- Block3 -->
                     <div class="block3">
                         <a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">
-                            <img src="images/blog-03.jpg" alt="IMG-BLOG">
+                            <img src="assets/frontend/images/blog-03.jpg" alt="IMG-BLOG">
                         </a>
 
                         <div class="block3-txt p-t-14">
@@ -567,14 +567,14 @@
     <section class="instagram p-t-20">
         <div class="sec-title p-b-52 p-l-15 p-r-15">
             <h3 class="m-text5 t-center">
-                @ follow us on Instagram
+                @ Theo dõi trên trang Facebook của chúng tôi
             </h3>
         </div>
 
         <div class="flex-w">
             <!-- Block4 -->
             <div class="block4 wrap-pic-w">
-                <img src="images/gallery-03.jpg" alt="IMG-INSTAGRAM">
+                <img src="assets/frontend/images/gallery-03.jpg" alt="IMG-INSTAGRAM">
 
                 <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
                     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -596,7 +596,7 @@
 
             <!-- Block4 -->
             <div class="block4 wrap-pic-w">
-                <img src="images/gallery-07.jpg" alt="IMG-INSTAGRAM">
+                <img src="assets/frontend/images/gallery-07.jpg" alt="IMG-INSTAGRAM">
 
                 <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
                     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -618,7 +618,7 @@
 
             <!-- Block4 -->
             <div class="block4 wrap-pic-w">
-                <img src="images/gallery-09.jpg" alt="IMG-INSTAGRAM">
+                <img src="assets/frontend/images/gallery-09.jpg" alt="IMG-INSTAGRAM">
 
                 <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
                     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -640,7 +640,7 @@
 
             <!-- Block4 -->
             <div class="block4 wrap-pic-w">
-                <img src="images/gallery-13.jpg" alt="IMG-INSTAGRAM">
+                <img src="assets/frontend/images/gallery-13.jpg" alt="IMG-INSTAGRAM">
 
                 <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
                     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
@@ -662,7 +662,7 @@
 
             <!-- Block4 -->
             <div class="block4 wrap-pic-w">
-                <img src="images/gallery-15.jpg" alt="IMG-INSTAGRAM">
+                <img src="assets/frontend/images/gallery-15.jpg" alt="IMG-INSTAGRAM">
 
                 <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
                     <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">

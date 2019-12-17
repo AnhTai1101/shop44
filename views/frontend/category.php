@@ -173,7 +173,7 @@
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="../../<?php echo $list_product->image; ?>" alt="IMG-PRODUCT">
+									<img src="<?php echo $list_product->image; ?>" alt="IMG-PRODUCT">
 
 									<div class="block2-overlay trans-0-4">
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -191,7 +191,7 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="../../index.php?controller=product&action=productDetail&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
+									<a href="index.php?controller=product&action=productDetail&id=<?php echo $list_product->id; ?>" class="block2-name dis-block s-text3 p-b-5">
                                     <?php echo $list_product->title; ?>
 									</a>
                                     
