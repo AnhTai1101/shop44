@@ -39,7 +39,11 @@
 									</button>
 								</div>
 							</td>
-                            <td class="column-5"><?php echo strrev(chop(chunk_split(strrev($cart['number']*$cart['price']),3,"."),".")); ?>đ</td>
+                            <td  style="position: relative ;" class="column-5"><?php echo strrev(chop(chunk_split(strrev($cart['number']*$cart['price']),3,"."),".")); ?>đ 
+								<a style="position: absolute;top: 4px;right: 10px;" href="gio-hang-cua-ban/delete/<?php echo $cart['id']; ?>">
+									<span  class="lnr lnr-cross"></span>
+								</a>
+							</td>
                             <?php $total = $total + $cart['number']*$cart['price']; ?>
 						</tr>
                         <?php endforeach; ?>

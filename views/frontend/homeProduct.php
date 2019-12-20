@@ -18,49 +18,49 @@
 					<div class="leftbar p-r-20 p-r-0-sm">
 						<!--  -->
 						<h4 class="m-text14 p-b-7">
-							Categories
+							Danh mục
 						</h4>
 
 						<ul class="p-b-54">
 							<li class="p-t-4">
 								<a href="#" class="s-text13 active1">
-									All
+									Tất cả
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Women
+									Quần áo nữ
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Men
+									Quần áo nam
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Kids
+									Trẻ em
 								</a>
 							</li>
 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
-									Accesories
+									Phụ kiện
 								</a>
 							</li>
 						</ul>
 
 						<!--  -->
 						<h4 class="m-text14 p-b-32">
-							Filters
+							Lọc theo:
 						</h4>
 
 						<div class="filter-price p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-17">
-								Price
+								Giá
 							</div>
 
 							<div class="wra-filter-bar">
@@ -71,19 +71,19 @@
 								<div class="w-size11">
 									<!-- Button -->
 									<button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
-										Filter
+										Lọc
 									</button>
 								</div>
 
 								<div class="s-text3 p-t-10 p-b-10">
-									Range: $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
+									Phạm vi: <span id="value-lower">100000</span>đ - $<span id="value-upper">2000000</span>
 								</div>
 							</div>
 						</div>
 
 						<div class="filter-color p-t-22 p-b-50 bo3">
 							<div class="m-text15 p-b-12">
-								Color
+								Màu
 							</div>
 
 							<ul class="flex-w">
@@ -125,7 +125,7 @@
 						</div>
 
 						<div class="search-product pos-relative bo4 of-hidden">
-							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Search Products...">
+							<input class="s-text7 size6 p-l-23 p-r-50" type="text" name="search-product" placeholder="Tìm kiếm theo tên...">
 
 							<button class="flex-c-m size5 ab-r-m color2 color0-hov trans-0-4">
 								<i class="fs-12 fa fa-search" aria-hidden="true"></i>
@@ -161,26 +161,28 @@
 						</div>
 
 						<span class="s-text8 p-t-5 p-b-5">
-							Hiển thị 1->12 trong <?php echo count($all); ?> sản phẩm
+							Hiển thị 1->12 trong <?php isset($total) ? $number = $total : $number = 0; echo $number; ?> sản phẩm
 						</span>
 					</div>
 
 					<!-- Product -->
 					<div class="row">
-						<?php foreach($all as $all): ?>
+					<!-- kiểm tra xem nếu -->
+					<?php if($number !== 0): ?>
+						<?php foreach($data as $data): ?>
 						<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 							<!-- Block2 -->
 							<div class="block2">
 								<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-									<img src="<?php echo $all->image; ?>" alt="IMG-PRODUCT">
+									<img src="<?php echo $data->image; ?>" alt="IMG-PRODUCT">
 
 									<div class="block2-overlay trans-0-4">
-										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+										<a href="chi-tiet-san-pham/<?php echo Controller::removeUnicode($data->title); ?>/<?php echo $data->id; ?>" class="block2-btn-addwishlist hov-pointer trans-0-4">
 											<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
 											<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 										</a>
 
-										<div class="block2-btn-addcart w-size1 trans-0-4">
+										<div id="<?php echo $data->id; ?>" class="block2-btn-addcart w-size1 trans-0-4">
 											<!-- Button -->
 											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 												Add to Cart
@@ -190,24 +192,30 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-									<?php echo $all->title; ?>
+									<a href="chi-tiet-san-pham/<?php echo Controller::removeUnicode($data->title); ?>/<?php echo $data->id; ?>" class="block2-name dis-block s-text3 p-b-5">
+									<?php echo $data->title; ?>
 									</a>
 
 									<span class="block2-price m-text6 p-r-5">
-									<?php echo strrev(chop(chunk_split(strrev($all->price),3,"."),".")); ?>đ
+									<?php echo strrev(chop(chunk_split(strrev($data->price),3,"."),".")); ?>đ
 									</span>
 								</div>
 							</div>
 						</div>
 						<?php endforeach; ?>
-					</div>
 
-					<!-- Pagination -->
-					<div class="pagination flex-m flex-w p-t-26">
-						<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
 					</div>
+					<!-- Pagination -->
+					<div <?php if($numPage <2) echo "style='display: none;'"; ?> class="pagination flex-m flex-w p-t-26">
+						Trang &nbsp;
+						<?php for( $i =1; $i<= $numPage; $i++): ?>
+						<a href="san-pham/page<?php echo $i; ?>" class="item-pagination flex-c-m trans-0-4 <?php if($i == $page) echo ' active-pagination'; ?>"><?php echo $i; ?></a>
+						<?php endfor; ?>
+						<!-- <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
+						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a> -->
+					</div>
+				<?php else: echo " Không có sản phẩm nào trong gian hàng!" ?>
+				<?php endif; ?>
 				</div>
 			</div>
 		</div>

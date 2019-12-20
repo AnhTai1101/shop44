@@ -95,15 +95,15 @@
                             </li>
 
                             <li>
-                                <a href="product.html">Shop</a>
+                                <a href="san-pham">Shop</a>
                             </li>
 
                             <li class="sale-noti">
-                                <a href="product.html">Sale</a>
+                                <a href="san-pham">Sale</a>
                             </li>
 
                             <li>
-                                <a href="cart.html">Giỏ hàng</a>
+                                <a href="gio-hang-cua-ban">Giỏ hàng</a>
                             </li>
 
                             <li>
@@ -131,34 +131,46 @@
                     <span class="linedivide1"></span>
                     <div class="header-wrapicon2">
                         <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                        <span id="number-cart" class="header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
+                        <span class="number-cart header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
                         <div class="header-cart header-dropdown">
-                        <ul class="header-cart-wrapitem" id="name_cart">
+                        
+                        <ul class="name_cart header-cart-wrapitem">
+                            <?php $total = 0; ?>
+                            <?php if(isset($_SESSION['cart'])): ?>
+                            <?php foreach($_SESSION['cart'] as $cart): ?>
                             <li class="header-cart-item">
                                 <div class="header-cart-item-img">
-                                    <img src="assets/frontend/images/item-cart-01.jpg" alt="IMG">
+                                    <img src="<?php echo $cart['image']; ?>" alt="IMG">
                                 </div>
 
                                 <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        White Shirt With Pleat Detail Back
-                                    </a>
-
+                                    <a href="chi-tiet-san-pham/<?php echo Controller::removeUnicode($cart['name']); ?>/<?php echo $cart['id']; ?>" class="header-cart-item-name">
+                                       <?php echo $cart['name']; ?>
+                                    </a><br>
                                     <span class="header-cart-item-info">
-                                        1 x $19.00
+                                        Số lượng: <?php echo $cart['number']; ?> cái
+                                    </span>
+                                    <span class="header-cart-item-info">
+                                    <?php echo strrev(chop(chunk_split(strrev($cart['price']),3,"."),".")); ?>đ
+                                    <?php $total += $cart['number']*$cart['price']; ?>
                                     </span>
                                 </div>
                             </li>
+                            <?php endforeach; ?>
+                            
+                            <?php else : echo "Bạn chưa mua gì! <br><br>" ?>
+                        <?php endif; ?>
                         </ul>
 
-                        <div class="header-cart-total">
-                            Total: $75.00
+                        <div id="" class="total-cart header-cart-total">
+                            Total: 
+                        <?php echo strrev(chop(chunk_split(strrev($total),3,"."),".")); ?>đ
+                        
                         </div>
-
                         <div class="header-cart-buttons">
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                <a href="gio-hang-cua-ban" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                     View Cart
                                 </a>
                             </div>
@@ -199,68 +211,40 @@
 
                     <div class="header-wrapicon2">
                         <img src="assets/frontend/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                        <span class="header-icons-noti">0</span>
+                        <span class="number-cart header-icons-noti"><?php echo isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ; ?></span>
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
-                            <ul class="header-cart-wrapitem">
+                            <ul class="name_cart header-cart-wrapitem">
+                            <?php $total1 = 0; ?>
+                            <?php foreach($_SESSION['cart'] as $cart): ?>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="assets/frontend/images/item-cart-01.jpg" alt="IMG">
+                                        <img src="<?php echo $cart['image']; ?>" alt="IMG">
                                     </div>
 
                                     <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
+                                        <a href="chi-tiet-san-pham/<?php echo $cart['name']; ?>/<?php echo $cart['id']; ?>" class="header-cart-item-name">
+                                        <?php echo $cart['name']; ?>
 										</a>
 
                                         <span class="header-cart-item-info">
-											1 x $19.00
+                                        <?php echo strrev(chop(chunk_split(strrev($cart['price']),3,"."),".")); ?>đ
 										</span>
                                     </div>
                                 </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="assets/frontend/images/item-cart-02.jpg" alt="IMG">
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-                                        <span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-                                    </div>
-                                </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="assets/frontend/images/item-cart-03.jpg" alt="IMG">
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-                                        <span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-                                    </div>
-                                </li>
+                                <?php $total1 = $total1 + $cart['number']*$cart['price']; ?>
+                            <?php endforeach; ?>
                             </ul>
 
-                            <div class="header-cart-total">
-                                Total: $75.00
+                            <div class="total-cart header-cart-total">
+                            <?php echo strrev(chop(chunk_split(strrev($total1),3,"."),".")); ?>đ
                             </div>
 
                             <div class="header-cart-buttons">
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="gio-hang-cua-ban" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										View Cart
 									</a>
                                 </div>
@@ -330,15 +314,15 @@
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="product.html">Shop</a>
+                        <a href="san-pham">Shop</a>
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="product.html">Sale</a>
+                        <a href="san-pham">Sale</a>
                     </li>
 
                     <li class="item-menu-mobile">
-                        <a href="cart.html">Features</a>
+                        <a href="gio-hang-cua-ban">Features</a>
                     </li>
 
                     <li class="item-menu-mobile">
@@ -392,7 +376,7 @@
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
                             <!-- Button -->
-                            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                            <a href="san-pham" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Shop Now
 							</a>
                         </div>
@@ -411,7 +395,7 @@
 
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
                             <!-- Button -->
-                            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                            <a href="san-pham" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
 								Shop Now
 							</a>
                         </div>
@@ -677,7 +661,8 @@
                 // return false;
 
                 $.ajax({
-                    url : window.location.pathname,
+                    // url : window.location.pathname, // cái này là lấy địa chỉ trang web hiện tại
+                    url : 'trangchu.html',
                     type : "get", // chọn phương thức gửi là get
                     dateType:"json", // dữ liệu trả về dạng text
                     data : { // Danh sách các thuộc tính sẽ gửi đi
@@ -694,16 +679,35 @@
                         // $('#name_cart').text(console.log(nameCart));
                         // $('#name_cart').text(nameCart[1].name);
                         var html = '';
+                        var total = 0;
                         $.each(nameCart , function(key, value) { 
+                            total += value.number*value.price;
                             html += '<li class="header-cart-item">';
                                 html += '<div class="header-cart-item-img">';
                                     html += '<img src="';
                                         html += value.image;
                                     html += '" alt="IMG">';
                                 html += '</div>';
+                                html += '<div class="header-cart-item-txt">';
+                                    html += '<a href="';
+                                    html += 'chi-tiet-san-pham/' + (value.name).replace(/ /g, "-") + '/' + value.id;
+                                    html += '" class="header-cart-item-name">';
+                                        html += value.name;
+                                    html += '</a>';
+                                    html += '<span class="header-cart-item-info">';
+                                        html += 'Số lượng: ' + value.number + 'cái';
+                                    html += '</span>';
+                                    html += '<span class="header-cart-item-info">';
+                                        html += value.price + '.đ';
+                                    html += '</span>';
+                                html += '</div>';
                             html += '</li>';
                         });
-                        $('#name_cart').html(html);
+                        total = 'Total: ' + total + ' .đ'
+                        $('.name_cart').html(html);
+                        $('.number-cart').text(Object.keys(nameCart).length);
+                        $('.total-cart').text(total);
+                        console.log(Object.keys(nameCart).length);
 
                     }
                 });
@@ -721,22 +725,6 @@
         function show_login(){
             $('.fix').toggle(500);
         };
-        $('#thaydoi').click(function(){
-        $.ajax({
-            url : window.location.pathname,
-            type : "get",
-            dateType : "text",
-            data : {
-                area : 'frontend',
-                controller : 'test',
-                action : 'test',
-                id : 5
-            },
-            success : function(result){
-                $('#thaydoi').text(result);
-            }
-        });
-    });
     </script>
 
     <!--===============================================================================================-->
