@@ -11,10 +11,10 @@
 					<table class="table-shopping-cart">
 						<tr class="table-head">
 							<th class="column-1"></th>
-							<th class="column-2">Product</th>
-							<th class="column-3">Price</th>
-							<th class="column-4 p-l-70">Quantity</th>
-							<th class="column-5">Total</th>
+							<th class="column-2">Sản phẩm</th>
+							<th class="column-3">Giá</th>
+							<th class="column-4 p-l-70">Số lượng</th>
+							<th class="column-5">Tổng</th>
                         </tr>
                         <?php $total = 0; ?>
                         <?php foreach($_SESSION['cart'] as $cart): ?>
@@ -77,13 +77,13 @@
 			<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
 				<div class="flex-w flex-m w-full-sm">
 					<div class="size11 bo4 m-r-10">
-						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="Coupon Code">
+						<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="Mã giảm giá (nếu có)">
 					</div>
 
 					<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
 						<!-- Button -->
 						<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-							Apply coupon
+							Áp dụng mã
 						</button>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 				<div class="size10 trans-0-4 m-t-10 m-b-10">
 					<!-- Button -->
 					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-						Update Cart
+						Cập nhật
 					</button>
 				</div>
 			</div>
@@ -99,13 +99,13 @@
 			<!-- Total -->
 			<div class="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
 				<h5 class="m-text20 p-b-24">
-					Cart Totals
+					Tổng đơn hàng
 				</h5>
 
 				<!--  -->
 				<div class="flex-w flex-sb-m p-b-12">
 					<span class="s-text18 w-size19 w-full-sm">
-						Subtotal:
+						Chưa tính phí vận chuyển:
 					</span>
 
 					<span class="m-text21 w-size20 w-full-sm">
@@ -116,29 +116,36 @@
 				<!--  -->
 				<div class="flex-w flex-sb bo10 p-t-15 p-b-20">
 					<span class="s-text18 w-size19 w-full-sm">
-						Shipping:
+						Ghi chú:
 					</span>
 
 					<div class="w-size20 w-full-sm">
 						<p class="s-text8 p-b-23">
-							There are no shipping methods available. Please double check your address, or contact us if you need any help.
+							Bạn cần chọn địa chỉ giao hàng, để tính phí ship.
 						</p>
 
 						<span class="s-text19">
-							Calculate Shipping
+							Chọn địa chỉ
 						</span>
 
 						<div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
 							<select class="selection-2" name="country">
-								<option>Select a country...</option>
-								<option>US</option>
-								<option>UK</option>
-								<option>Japan</option>
+								<option>Chọn Tỉnh /Thành phố...</option>
+								<option>Hà Nội</option>
+								<option>Hồ chí Minh</option>
+								<option>Đà nẵng</option>
+								<option>Khác...</option>
 							</select>
 						</div>
 
 						<div class="size13 bo4 m-b-12">
-						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State /  country">
+						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Quận /Huyện">
+						</div>
+						<div class="size13 bo4 m-b-12">
+						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Phường /Xã">
+						</div>
+						<div class="size13 bo4 m-b-12">
+						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Tên đường + số nhà">
 						</div>
 
 						<div class="size13 bo4 m-b-22">
@@ -148,7 +155,7 @@
 						<div class="size14 trans-0-4 m-b-10">
 							<!-- Button -->
 							<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-								Update Totals
+								Gửi shop
 							</button>
 						</div>
 					</div>
@@ -157,7 +164,7 @@
 				<!--  -->
 				<div class="flex-w flex-sb-m p-t-26 p-b-30">
 					<span class="m-text22 w-size19 w-full-sm">
-						Total:
+						Tổng:
 					</span>
 
 					<span class="m-text21 w-size20 w-full-sm">
@@ -166,9 +173,10 @@
 				</div>
 
 				<div class="size15 trans-0-4">
+					<a href=""></a>
 					<!-- Button -->
 					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
-						Proceed to Checkout
+						Hoàn thành
 					</button>
 				</div>
 			</div>

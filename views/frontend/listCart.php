@@ -112,24 +112,24 @@
 
 					<div class="w-size20 w-full-sm">
 						<p class="s-text8 p-b-23">
-							There are no shipping methods available. Please double check your address, or contact us if you need any help.
+							Bạn chưa chọn địa điểm trước đó.Vui lòng chọn địa điểm để chuyển hàng.
 						</p>
 
 						<span class="s-text19">
-							Calculate Shipping
+							Vị trí giao hàng
 						</span>
 
 						<div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
 							<select class="selection-2" name="country">
-								<option>Select a country...</option>
-								<option>US</option>
-								<option>UK</option>
-								<option>Japan</option>
+								<option>Chọn thành phố</option>
+								<option>Hà Nội</option>
+								<option>Hồ Chí Minh</option>
+								<option>Đà Nẵng</option>
 							</select>
 						</div>
 
 						<div class="size13 bo4 m-b-12">
-						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State /  country">
+						<input class="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="Quận / Huyện">
 						</div>
 
 						<div class="size13 bo4 m-b-22">

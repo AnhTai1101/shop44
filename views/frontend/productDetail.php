@@ -74,12 +74,12 @@
                     </div>
 
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-                        <select class="selection-2" name="size">
-                            <option>Choose an option</option>
-                            <option>Size S</option>
-                            <option>Size M</option>
-                            <option>Size L</option>
-                            <option>Size XL</option>
+                        <select class="selection-2" id="size">
+                            <option>Kích cỡ</option>
+                            <option value='S'>Size S</option>
+                            <option value='M'>Size M</option>
+                            <option value='L'>Size L</option>
+                            <option value='XL'>Size XL</option>
                         </select>
                     </div>
                 </div>
@@ -90,12 +90,12 @@
                     </div>
 
                     <div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
-                        <select class="selection-2" name="color">
-                            <option>Choose an option</option>
-                            <option>Gray</option>
-                            <option>Red</option>
-                            <option>Black</option>
-                            <option>Blue</option>
+                        <select class="selection-2" id="color">
+                            <option>Chọn màu</option>
+                            <option value='Gray'>Màu xám</option>
+                            <option value='Red'>Màu đỏ</option>
+                            <option value='Black'>Màu đen</option>
+                            <option value='Blue'>Màu xanh da trời</option>
                         </select>
                     </div>
                 </div>
@@ -107,14 +107,14 @@
                                 <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                             </button>
 
-                            <input class="size8 m-text18 t-center num-product" type="number" name="num-product" value="1">
+                            <input class="size8 m-text18 t-center num-product" type="number" id="number-product" value="1">
 
-                            <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+                            <button class="cart-detail btn-num-product-up color1 flex-c-m size7 bg8 eff2">
                                 <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
                             </button>
                         </div>
 
-                        <div class="btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
+                        <div id='<?php echo $infoProduct[0]->id; ?>' class="add-cart-detail btn-addcart-product-detail size9 trans-0-4 m-t-10 m-b-10">
                             <!-- Button -->
                             <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
                                 Add to Cart
@@ -203,7 +203,7 @@
 
                                 <div class="block2-btn-addcart w-size1 trans-0-4">
                                     <!-- Button -->
-                                    <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                    <button  id=<?php echo $infoProduct->id; ?> class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
                                         Add to Cart
                                     </button>
                                 </div>

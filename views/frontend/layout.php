@@ -416,12 +416,12 @@
         <div class="flex-w p-b-90">
             <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
                 <h4 class="s-text12 p-b-30">
-                    GET IN TOUCH
+                    Thông tin liên lạc
                 </h4>
 
                 <div>
                     <p class="s-text7 w-size27">
-                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                        Bạn có thể đặt câu hỏi cho chúng tôi nếu cần thiết qua đường dây nóng 1900.090. Hoặc qua các mạng xã hội.
                     </p>
 
                     <div class="flex-m p-t-30">
@@ -436,31 +436,31 @@
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
                 <h4 class="s-text12 p-b-30">
-                    Categories
+                    Danh mục sản phẩm
                 </h4>
 
                 <ul>
                     <li class="p-b-9">
                         <a href="#" class="s-text7">
-							Men
+							Nam
 						</a>
                     </li>
 
                     <li class="p-b-9">
                         <a href="#" class="s-text7">
-							Women
+							Nữ
 						</a>
                     </li>
 
                     <li class="p-b-9">
                         <a href="#" class="s-text7">
-							Dresses
+							Trẻ em
 						</a>
                     </li>
 
                     <li class="p-b-9">
                         <a href="#" class="s-text7">
-							Sunglasses
+							Phụ kiện
 						</a>
                     </li>
                 </ul>
@@ -468,7 +468,7 @@
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
                 <h4 class="s-text12 p-b-30">
-                    Links
+                    Bài tin
                 </h4>
 
                 <ul>
@@ -500,7 +500,7 @@
 
             <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
                 <h4 class="s-text12 p-b-30">
-                    Help
+                    Giúp đỡ
                 </h4>
 
                 <ul>
@@ -517,8 +517,8 @@
                     </li>
 
                     <li class="p-b-9">
-                        <a href="#" class="s-text7">
-							Shipping
+                        <a href="trangchu.html" class="s-text7">
+							Trang chủ
 						</a>
                     </li>
 
@@ -532,7 +532,7 @@
 
             <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
                 <h4 class="s-text12 p-b-30">
-                    Newsletter
+                    Tin mới
                 </h4>
 
                 <form>
@@ -544,7 +544,7 @@
                     <div class="w-size2 p-t-20">
                         <!-- Button -->
                         <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-							Subscribe
+							Nhận tin
 						</button>
                     </div>
 
@@ -574,7 +574,7 @@
             </a>
 
             <div class="t-center s-text8 p-t-20">
-                Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Super Amind</a>
             </div>
         </div>
     </footer>
@@ -651,84 +651,12 @@
     <script type="text/javascript" src="assets/frontend/vendor/sweetalert/sweetalert.min.js"></script>
     <script type="text/javascript">
     
-        $('.block2-btn-addcart').get()
-        $('.block2-btn-addcart').each(function() {
-            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-
-            
-            $(this).on('click', function() {
-                // console.log(window.location.pathname)
-                // return false;
-
-                $.ajax({
-                    // url : window.location.pathname, // cái này là lấy địa chỉ trang web hiện tại
-                    url : 'trangchu.html',
-                    type : "get", // chọn phương thức gửi là get
-                    dateType:"json", // dữ liệu trả về dạng text
-                    data : { // Danh sách các thuộc tính sẽ gửi đi
-                        area : 'frontend',
-                        controller : 'cart',
-                        action : 'add',
-                        id : $(this).attr('id')
-                    },
-                    success : function (result){
-                        // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
-                        swal(nameProduct, "is added to cart ! ", "success");
-                        // $('#number-cart').text(result);
-                        var nameCart = JSON.parse(result);
-                        // $('#name_cart').text(console.log(nameCart));
-                        // $('#name_cart').text(nameCart[1].name);
-                        var html = '';
-                        var total = 0;
-                        $.each(nameCart , function(key, value) { 
-                            total += value.number*value.price;
-                            html += '<li class="header-cart-item">';
-                                html += '<div class="header-cart-item-img">';
-                                    html += '<img src="';
-                                        html += value.image;
-                                    html += '" alt="IMG">';
-                                html += '</div>';
-                                html += '<div class="header-cart-item-txt">';
-                                    html += '<a href="';
-                                    html += 'chi-tiet-san-pham/' + (value.name).replace(/ /g, "-") + '/' + value.id;
-                                    html += '" class="header-cart-item-name">';
-                                        html += value.name;
-                                    html += '</a>';
-                                    html += '<span class="header-cart-item-info">';
-                                        html += 'Số lượng: ' + value.number + 'cái';
-                                    html += '</span>';
-                                    html += '<span class="header-cart-item-info">';
-                                        html += value.price + '.đ';
-                                    html += '</span>';
-                                html += '</div>';
-                            html += '</li>';
-                        });
-                        total = 'Total: ' + total + ' .đ'
-                        $('.name_cart').html(html);
-                        $('.number-cart').text(Object.keys(nameCart).length);
-                        $('.total-cart').text(total);
-                        console.log(Object.keys(nameCart).length);
-
-                    }
-                });
-                // $.get('index.php?area=frontend&controller=cart&action=add&id=4');
-                // swal(nameProduct, "is added to cart !", "success");
-            });
-        });
-
-        $('.block2-btn-addwishlist').each(function() {
-            var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-            $(this).on('click', function() {
-                swal(nameProduct, "is added to wishlist !", "success");
-            });
-        });
-        function show_login(){
-            $('.fix').toggle(500);
-        };
+     
     </script>
 
     <!--===============================================================================================-->
     <script src="assets/frontend/js/main.js"></script>
+    <script src="assets/frontend/js/1.js"></script>
 
 </body>
 

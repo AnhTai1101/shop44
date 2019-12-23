@@ -37,5 +37,14 @@
             // nếu để chạy thường
             header("location:index.php?controller=cart");
         } 
+        public function add_detail(){
+            $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
+            $cart = $this->cart_addDetail($id);
+            $cart = json_encode($cart);
+            // echo '<pre>';
+            // print_r($cart);
+            // echo '</pre>';
+            echo $cart;
+        }
     }
 ?>

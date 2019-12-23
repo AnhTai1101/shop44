@@ -49,10 +49,34 @@
                 );
             };
             $cart =$_SESSION['cart'];
-            // $number = count($_SESSION['cart']);
-            // foreach($_SESSION['cart'] as $cart){
-            //     $number = $number + $cart['number'];
-            // }
+            return $cart;
+        }
+        // hàm thêm sản phẩm có thêm thông tin size và color
+        public function cart_addDetail($id){
+            $size = isset($_GET['size']) ? $_GET['size'] : 0 ;
+            $color = isset($_GET['color']) ? $_GET['color'] : 0 ;
+            $number = isset($_GET['number']) ? $_GET['number'] : 1 ;
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("SELECT * FROM product WHERE id=:id");
+            $query->execute(array("id"=>$id));
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $product = $query->fetchAll();
+            // -- 
+            // phân trang
+            $_SESSION['cart'][$id] = array(
+                "id"=>$id,
+                "size"=>$size,
+                "color"=>$color,
+                "name"=>$product[0]->title,
+                "price"=>$product[0]->price,
+                "number"=>$number,
+                "image"=>$product[0]->image,
+                "image1"=>$product[0]->image1,
+                "image2"=>$product[0]->image2,
+                "content"=>$product[0]->content,
+                "name-no"=>Controller::removeUnicode($product[0]->title) 
+            );
+            $cart =$_SESSION['cart'];
             return $cart;
         }
         // tạo hàm xóa mảng trong giỏ hàng
