@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>webSite</title>
 
     <!-- Fontfaces CSS-->
     <link href="assets/backend/css/font-face.css" rel="stylesheet" media="all">
@@ -58,19 +58,19 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Trang chủ</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="assets/backend/index.html">Dashboard 1</a>
+                                    <a href="assets/backend/index.html">Trang chủ 1</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index2.html">Dashboard 2</a>
+                                    <a href="assets/backend/index2.html">Trang chủ 2</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index3.html">Dashboard 3</a>
+                                    <a href="assets/backend/index3.html">Trang chủ 3</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index4.html">Dashboard 4</a>
+                                    <a href="assets/backend/index4.html">Trang chủ 4</a>
                                 </li>
                             </ul>
                         </li>
@@ -166,29 +166,29 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Trang chủ</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="assets/backend/index.html">Dashboard 1</a>
+                                    <a href="assets/backend/index.html">Trang chủ 1</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index2.html">Dashboard 2</a>
+                                    <a href="assets/backend/index2.html">Trang chủ 2</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index3.html">Dashboard 3</a>
+                                    <a href="assets/backend/index3.html">Trang chủ 3</a>
                                 </li>
                                 <li>
-                                    <a href="assets/backend/index4.html">Dashboard 4</a>
+                                    <a href="assets/backend/index4.html">Trang chủ 4</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="assets/backend/chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="index.php?area=backend&controller=product">
+                                <i class="fas fa-chart-bar"></i>Sản phẩm</a>
                         </li>
                         <li>
                             <a href="assets/backend/table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Bảng</a>
                         </li>
                         <li>
                             <a href="assets/backend/form.html">
@@ -196,15 +196,15 @@
                         </li>
                         <li>
                             <a href="assets/backend/calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                <i class="fas fa-calendar-alt"></i>Lịch</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="assets/backend/map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
+                        </li> -->
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
+                                <i class="fas fa-copy"></i>Trang</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="assets/backend/login.html">Login</a>
@@ -270,7 +270,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Tìm theo tên &amp; id..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -282,7 +282,7 @@
                                         <span class="quantity">1</span>
                                         <div class="mess-dropdown js-dropdown">
                                             <div class="mess__title">
-                                                <p>You have 2 news message</p>
+                                                <p>Bạn có 0 thông báo</p>
                                             </div>
                                             <div class="mess__item">
                                                 <div class="image img-cir img-40">
