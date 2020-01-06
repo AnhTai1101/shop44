@@ -20,7 +20,7 @@ $('.block2-btn-addcart').each(function() {
             },
             success : function (result){
                 // Sau khi gửi và kết quả trả về thành công thì gán nội dung trả về
-                swal(nameProduct, "is added to cart ! ", "success");
+                swal(nameProduct, "đã thêm thành công vào giỏ hàng ! ", "Đông ý");
                 // $('#number-cart').text(result);
                 var nameCart = JSON.parse(result);
                 // $('#name_cart').text(console.log(nameCart));
@@ -87,7 +87,7 @@ $('.add-cart-detail').click(function(){
             number : $('#number-product').val()
         },
         success : function(result1){
-            swal("Sản phẩm đã mua thành công", "Đồng ý!");
+            swal("Sản phẩm đã update thành công tại giỏ hàng", "Đồng ý!");
             var nameCart1 = JSON.parse(result1);
             var html1 = '';
             var total1 = 0;

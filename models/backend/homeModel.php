@@ -1,5 +1,31 @@
 <?php
     trait homeModel{
+        public function model_total(){
+			//lay bien ket noi csdl
+			$conn = Connection::getInstance();
+			//chuan bi cau truy van
+			$query = $conn->prepare("select * from product");
+			//chon che de duyet ban ghi
+			$query->setFetchMode(PDO::FETCH_OBJ);
+			//thuc hien truy van
+			$query->execute();
+			//dem so luong ban ghi
+			$numberRecord = $query->rowCount();
+			return $numberRecord;
+        }
+        public function model_getAll($fromRecord,$recordPerPage){
+			//lay bien ket noi csdl
+			$conn = Connection::getInstance();			
+			//chuan bi cau truy van
+			$query = $conn->prepare("SELECT product.*,categories.name FROM product INNER JOIN categories ON product.category_id = categories.id order by id desc limit $fromRecord,$recordPerPage");
+			//chon che de duyet ban ghi
+			$query->setFetchMode(PDO::FETCH_OBJ);
+			//thuc hien truy van
+			$query->execute();
+			//duyet tat ca cac ban ghi nem ve mot bien
+			$result = $query->fetchAll();
+			return $result;
+		}
         public function list_product(){
             $conn = Connection::getInstance();
             $query = $conn->prepare("SELECT product.*,categories.name FROM product INNER JOIN categories ON product.category_id = categories.id");

@@ -42,7 +42,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="assets/backend/index.html">
+                        <a class="logo" href="index.php?area=backend&controller=product&p=1">
                             <img src="assets/backend/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -157,7 +157,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="index.php?area=backend&controller=product&p=1">
                     <img src="assets/backend/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
@@ -188,7 +188,7 @@
                         </li>
                         <li>
                             <a href="assets/backend/table.html">
-                                <i class="fas fa-table"></i>Bảng</a>
+                                <i class="fas fa-table"></i>Đơn hàng</a>
                         </li>
                         <li>
                             <a href="assets/backend/form.html">
