@@ -23,17 +23,18 @@
 
 						<ul class="p-b-54">
 							<li class="p-t-4">
-								<a href="#" class="s-text13 active1">
+								<a href="san-pham" class="s-text13 active1">
 									Tất cả
 								</a>
 							</li>
-
+							<?php foreach($list_category as $list_category): ?>
 							<li class="p-t-4">
-								<a href="#" class="s-text13">
-									Quần áo nữ
+								<a href="danh-muc-san-pham/<?php echo $list_category->id; ?>" class="s-text13">
+									<?php echo $list_category->name; ?>
 								</a>
 							</li>
-
+							<?php endforeach; ?>
+<!-- 
 							<li class="p-t-4">
 								<a href="#" class="s-text13">
 									Quần áo nam
@@ -50,7 +51,7 @@
 								<a href="#" class="s-text13">
 									Phụ kiện
 								</a>
-							</li>
+							</li> -->
 						</ul>
 
 						<!--  -->

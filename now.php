@@ -466,3 +466,10 @@
             <!-- END DATA TABLE -->
         </div>
     </div>
+- đơn hàng
+    - mã đơn
+    - mã người mua
+    - mã sản phẩm
+    - số lượng sản phẩm
+    - giá sản phẩm
+    - số tiền

@@ -1,5 +1,13 @@
 <?php
     trait productModel{
+		public function list_category(){
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("select * from categories");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute();
+            $result = $query->fetchAll();
+            return $result;
+        }
         public function info_product(){
             $id = isset($_GET['id']) ? $_GET['id'] : 0;
             $conn = Connection::getInstance();
@@ -17,6 +25,14 @@
             $result = $query->fetchAll();
             return $result;
         }
+        public function oneProduct($id){
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("SELECT * FROM product WHERE category_id=:id order by id desc");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute(array('id'=>$id));
+            $result = $query->fetchAll();
+            return $result;
+        }
         public function model_getAll($fromRecord,$recordPerPage){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();			
@@ -26,6 +42,19 @@
 			$query->setFetchMode(PDO::FETCH_OBJ);
 			//thuc hien truy van
 			$query->execute();
+			//duyet tat ca cac ban ghi nem ve mot bien
+			$result = $query->fetchAll();
+			return $result;
+		}
+        public function model_get($id,$fromRecord,$recordPerPage){
+			//lay bien ket noi csdl
+			$conn = Connection::getInstance();			
+			//chuan bi cau truy van
+			$query = $conn->prepare("select * from product where category_id=:id order by id desc limit $fromRecord,$recordPerPage");
+			//chon che de duyet ban ghi
+			$query->setFetchMode(PDO::FETCH_OBJ);
+			//thuc hien truy van
+			$query->execute(array('id'=>$id));
 			//duyet tat ca cac ban ghi nem ve mot bien
 			$result = $query->fetchAll();
 			return $result;

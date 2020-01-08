@@ -42,7 +42,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.php?area=backend&controller=product&p=1">
+                        <a class="logo" href="index.php?area=backend&controller=home&p=1">
                             <img src="assets/backend/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -157,7 +157,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="index.php?area=backend&controller=product&p=1">
+                <a href="index.php?area=backend&controller=home&p=1">
                     <img src="assets/backend/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
@@ -190,7 +190,7 @@
                             <a href="assets/backend/table.html">
                                 <i class="fas fa-table"></i>Đơn hàng</a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="assets/backend/form.html">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
@@ -198,10 +198,10 @@
                             <a href="assets/backend/calendar.html">
                                 <i class="fas fa-calendar-alt"></i>Lịch</a>
                         </li>
-                        <!-- <li>
+                        <li>
                             <a href="assets/backend/map.html">
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li> -->
+                        </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Trang</a>
@@ -255,7 +255,7 @@
                                     <a href="assets/backend/typo.html">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>

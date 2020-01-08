@@ -8,5 +8,13 @@
             $result = $query->fetchAll();
             return $result;
         }
+        public function list_category(){
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("select * from categories");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute();
+            $result = $query->fetchAll();
+            return $result;
+        }
     }
 ?>

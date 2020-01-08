@@ -11,5 +11,10 @@
             // print_r($list_product);
             // echo "</pre>";
         }
+        public function list_product(){
+            $id = isset($_GET['id']) ? $_GET['id'] : 0;
+            $list_product = $this->list_product($id);
+            $this->renderHTML("views/frontend/category_listProduct.php");
+        }
     }
 ?>

@@ -11,17 +11,18 @@
                 <div class="table-data__tool-left">
                     <div class="rs-select2--light rs-select2--md">
                         <select class="js-select2" name="property">
-                            <option selected="selected">Tất cả danh mục</option>
-                            <option value="">Quần dài</option>
-                            <option value="">Áo dài</option>
+                            <option selected="selected">Danh mục</option>
+                            <?php foreach($category as $categories): ?>
+                            <option value=""><?php echo $categories->name; ?></option>
+                            <?php endforeach; ?>
                         </select>
                         <div class="dropDownSelect2"></div>
                     </div>
                     <div class="rs-select2--light rs-select2--sm">
                         <select class="js-select2" name="time">
                             <option selected="selected">Bán chạy</option>
-                            <option value="">Tuần qua</option>
-                            <option value="">Tháng trước</option>
+                            <option value="">Tuần</option>
+                            <option value="">Tháng</option>
                         </select>
                         <div class="dropDownSelect2"></div>
                     </div>
@@ -158,7 +159,7 @@
                                 <span class="time">10:00 AM</span>
                             </div>
                         </div>
-                        <div class="au-task__item au-task__item--warning">
+                        <!-- <div class="au-task__item au-task__item--warning">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
                                     <a href="#">Create new task for Dashboard</a>
@@ -197,7 +198,7 @@
                                 </h5>
                                 <span class="time">11:00 AM</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="au-task__footer">
                         <button class="au-btn au-btn-load js-load-btn">load more</button>
@@ -244,24 +245,26 @@
                                 </div>
                             </div> -->
                             <?php foreach($category as $categories): ?>
-                            <div class="au-message__item unread">
-                                <div class="au-message__item-inner">
-                                    <div class="au-message__item-text">
-                                        <div class="avatar-wrap online">
-                                            <div class="avatar">
-                                                <img src="<?php echo $categories->image; ?>" alt="Nicholas Martinez">
+                            <a href="index.php?area=backend&controller=category&action=list_product&id=<?php echo $categories->id; ?>">
+                                <div class="au-message__item unread">
+                                    <div class="au-message__item-inner">
+                                        <div class="au-message__item-text">
+                                            <div class="avatar-wrap online">
+                                                <div class="avatar">
+                                                    <img src="<?php echo $categories->image; ?>" alt="Nicholas Martinez">
+                                                </div>
+                                            </div>
+                                            <div class="text">
+                                                <h5 class="name"><?php echo $categories->name; ?></h5>
+                                                <p><?php echo $categories->title; ?>&nbsp;&nbsp;</p>
                                             </div>
                                         </div>
-                                        <div class="text">
-                                            <h5 class="name"><?php echo $categories->name; ?></h5>
-                                            <p><?php echo $categories->title; ?></p>
+                                        <div class="au-message__item-time">
+                                            <span><?php echo date('d-m-Y - H:m:s',strtotime($categories->update_at)); ?></span>
                                         </div>
                                     </div>
-                                    <div class="au-message__item-time">
-                                        <span><?php echo date('d-m-Y - H:m:s',strtotime($categories->update_at)); ?></span>
-                                    </div>
                                 </div>
-                            </div>
+                            </a>
                             <?php endforeach; ?>
                             <!-- <div class="au-message__item">
                                 <div class="au-message__item-inner">
