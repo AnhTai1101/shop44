@@ -12,7 +12,7 @@
 			$category = $this->list_category();
 			//số bản ghi trong 1 trang tất cả danh mục
 			// $page = isset($_GET['page']) ? $_GET['page'] : 1;
-			$recordPerPage = 8;
+			$recordPerPage = 12;
 			//----
 			//phan trang	
 			//tính tổng số tất cả bản nghi

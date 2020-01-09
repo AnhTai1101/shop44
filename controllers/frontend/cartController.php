@@ -12,6 +12,23 @@
                 $_SESSION['cart'] = array();
             }
         }
+        public function callMail(){
+            $send = $this->saveCart();
+            $_SESSION['CallMailer'] = $send['email'];
+            print_r($_SESSION['CallMailer']);
+            $html = $this->updateCart();
+            include("CallMailer/CallMailer.php");
+        }
+        public function update(){
+            $update = $this->updateCart();
+            $info = $this->info();
+            $this->renderHTML("views/frontend/cart.php",array("info"=>$info));
+        }
+        // function nhan va gui mail dung php mailer
+        public function receiveCart(){
+            $cart = $_SESSION['cart'];
+            
+        }
         public function index(){
             $info = $this->info();
             $this->renderHTML("views/frontend/cart.php",array("info"=>$info));

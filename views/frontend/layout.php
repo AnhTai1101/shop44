@@ -171,14 +171,14 @@
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
                                 <a href="gio-hang-cua-ban" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    View Cart
+                                    Xem giỏ
                                 </a>
                             </div>
 
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
                                 <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    Check Out
+                                    Thanh toán
                                 </a>
                             </div>
                         </div>
@@ -245,14 +245,14 @@
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
                                     <a href="gio-hang-cua-ban" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
+										Xem giỏ
 									</a>
                                 </div>
 
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
                                     <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
+										Thanh toán
 									</a>
                                 </div>
                             </div>
@@ -358,7 +358,7 @@
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
                             <!-- Button -->
                             <a href="san-pham" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Shop
+								Vào Shop
 							</a>
                         </div>
                     </div>
@@ -377,7 +377,7 @@
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
                             <!-- Button -->
                             <a href="san-pham" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Shop Now
+                            Vào Shop
 							</a>
                         </div>
                     </div>
@@ -396,7 +396,7 @@
                         <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
                             <!-- Button -->
                             <a href="san-pham" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Shop Now
+								Vào Shop
 							</a>
                         </div>
                     </div>

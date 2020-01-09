@@ -9,6 +9,7 @@ RewriteRule danh-muc-san-pham/([0-9]+) index.php?area=frontend&controller=produc
 RewriteRule san-pham index.php?controller=product
 RewriteRule chi-tiet-san-pham index.php?controller=product
 RewriteRule gio-hang-cua-ban/(.*)/([0-9]+) index.php?controller=cart&action=$1&id=$2
+RewriteRule gio-hang-cua-ban/(.*) index.php?controller=cart&action=$1
 RewriteRule gio-hang-cua-ban index.php?controller=cart
 RewriteRule trangchu.html index.php
 RewriteRule san-pham/(.*)/([0-9]+) index.php?controller=product&action=$1&id=$2

@@ -2,6 +2,8 @@
 // ajax goi den file nay a e ?
 	//start session
 	session_start();
+	//--
+	// include "CallMailer/CallMailer.php";
 	//include file config.php
 	include "config.php";
 	//include file connection de ket noi csdl

@@ -265,11 +265,12 @@
 								</a>
                             </h4>
 
-                            <span class="s-text6">Bởi</span> <span class="s-text7">Admin 1</span>
-                            <span class="s-text6">vào</span> <span class="s-text7">July 22, 2019</span>
+                            <span class="s-text6">Bởi</span> <span class="s-text7">Anh chủ shop</span>
+                            <span class="s-text6">vào</span> <span class="s-text7"> 22/5/2019</span>
 
                             <p class="s-text8 p-t-16">
-                                Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames
+                                KHUYẾN MÃI THỨ 6 NGÀY 13 - THÊM 25% GIẢM GIÁ
+                                Bắt nguồn từ các nước phương Tây, thứ 6 ngày 13 được coi là ngày thiếu may mắn trong năm, những nỗi sợ hãi mang tên thứ 6 ngày 13 luôn khiến ai đó chúng ta giật mình. Để biến mọi lo âu thành sự may mắn, niềm hạnh phúc, LUPERI sẽ biến thứ 6 ngày 13 của bạn và kì nghỉ cuối tuần này trở thành "NGÀY ĐÁNG ĐƯỢC MONG NGÓNG NHẤT" 
                             </p>
                         </div>
                     </div>
@@ -285,15 +286,15 @@
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-									The White Sneakers Nearly Every Fashion Girls Own
+                                Xuân vàng nhân văn - vạn deal đón lộc
 								</a>
                             </h4>
 
-                            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-                            <span class="s-text6">on</span> <span class="s-text7">July 18, 2017</span>
+                            <span class="s-text6">Bởi</span> <span class="s-text7">Anh chủ shop</span>
+                            <span class="s-text6">vào</span> <span class="s-text7">15/12/2019</span>
 
                             <p class="s-text8 p-t-16">
-                                Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+                            Chào đón Tết Canh Tý, Nhà Sách Nhân Văn gửi đến chương trình Khai hội “Xuân Vàng Nhân Văn - Vạn Deal Đón Lộc” giảm thêm 30% tối đa 50k cho đơn hàng sách bất kỳ tại https://nhanvan.vn khi thanh toán bằng ví điện tử MoMo.
                             </p>
                         </div>
                     </div>
@@ -309,15 +310,15 @@
                         <div class="block3-txt p-t-14">
                             <h4 class="p-b-7">
                                 <a href="blog-detail.html" class="m-text11">
-									New York SS 2018 Street Style: Annina Mislin
+                                Mở thẻ nhận quà
 								</a>
                             </h4>
 
-                            <span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>
-                            <span class="s-text6">on</span> <span class="s-text7">July 2, 2017</span>
+                            <span class="s-text6">Bởi</span> <span class="s-text7">Anh chủ shop</span>
+                            <span class="s-text6">vào</span> <span class="s-text7">12/12/2019</span>
 
                             <p class="s-text8 p-t-16">
-                                Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc
+                                Làm đẹp là phải làm ngay. Đăng kí nhanh gói vay “Beauty Up” để được hỗ trợ tài chính đến 200 triệu- sẵn sàng thay đổi ngoại hình và sở hữu vẻ ngoài không khuyết điểm.
                             </p>
                         </div>
                     </div>
@@ -347,11 +348,11 @@
 
                     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
                         <p class="s-text10 m-b-15 h-size1 of-hidden">
-                            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                            Shop Thời Trang Online Love Tree với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng. 
                         </p>
 
                         <span class="s-text9">
-							Photo by @nancyward
+							Photo by @Admin
 						</span>
                     </div>
                 </a>
@@ -369,11 +370,11 @@
 
                     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
                         <p class="s-text10 m-b-15 h-size1 of-hidden">
-                            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                            Shop Thời Trang Online Love Tree với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng. 
                         </p>
 
                         <span class="s-text9">
-							Photo by @nancyward
+							Photo by @Admin
 						</span>
                     </div>
                 </a>
@@ -391,11 +392,11 @@
 
                     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
                         <p class="s-text10 m-b-15 h-size1 of-hidden">
-                            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                            Shop Thời Trang Online Love Tree với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng. 
                         </p>
 
                         <span class="s-text9">
-							Photo by @nancyward
+							Photo by @Admin
 						</span>
                     </div>
                 </a>
@@ -413,11 +414,11 @@
 
                     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
                         <p class="s-text10 m-b-15 h-size1 of-hidden">
-                            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                            Shop Thời Trang Online Love Tree với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng. 
                         </p>
 
                         <span class="s-text9">
-							Photo by @nancyward
+							Photo by @Admin
 						</span>
                     </div>
                 </a>
@@ -435,11 +436,11 @@
 
                     <div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
                         <p class="s-text10 m-b-15 h-size1 of-hidden">
-                            Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
+                            Shop Thời Trang Online Love Tree với phương châm "Đồng hành cùng phong cách thời trang của bạn" sẽ là nơi mua sắm an toàn và uy tín, bởi chúng tôi luôn đề cao tiêu chí mang đến cho quý khách những sản phẩm chất lượng nhất với giá cả luôn phải chăng. 
                         </p>
 
                         <span class="s-text9">
-							Photo by @nancyward
+							Photo by @Admin
 						</span>
                     </div>
                 </a>
@@ -452,31 +453,31 @@
         <div class="flex-w p-l-15 p-r-15">
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
                 <h4 class="m-text12 t-center">
-                    Free Delivery Worldwide
+                    Giao hàng miễn phí toàn quốc
                 </h4>
 
                 <a href="#" class="s-text11 t-center">
-					Click here for more info
+					Bấm để vào xem
 				</a>
             </div>
 
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
                 <h4 class="m-text12 t-center">
-                    30 Days Return
+                    Chính sách đổi trả 30 ngày
                 </h4>
 
                 <span class="s-text11 t-center">
-					Simply return it within 30 days for an exchange.
+					Không cần thiết phải gặp lỗi, vẫn đổi trả
 				</span>
             </div>
 
             <div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
                 <h4 class="m-text12 t-center">
-                    Store Opening
+                    Gia nhập chuỗi cửa hàng
                 </h4>
 
                 <span class="s-text11 t-center">
-					Shop open from Monday to Sunday
+					Liên hệ Anh chủ shop
 				</span>
             </div>
         </div>
