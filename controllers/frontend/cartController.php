@@ -12,12 +12,21 @@
                 $_SESSION['cart'] = array();
             }
         }
+        public function callBack(){
+            $this->renderHTML("views/frontend/home.php");
+        }
         public function callMail(){
             $send = $this->saveCart();
             $_SESSION['CallMailer'] = $send['email'];
             print_r($_SESSION['CallMailer']);
             $html = $this->updateCart();
             include("CallMailer/CallMailer.php");
+            // $this->renderHTML("views/frontend/home.php");
+        }
+        public function showCart(){
+            echo '<pre>';
+            print_r($_SESSION['cart']);
+            echo '</pre>';
         }
         public function update(){
             $update = $this->updateCart();
@@ -26,8 +35,7 @@
         }
         // function nhan va gui mail dung php mailer
         public function receiveCart(){
-            $cart = $_SESSION['cart'];
-            
+            $cart = $_SESSION['cart']; 
         }
         public function index(){
             $info = $this->info();
@@ -52,7 +60,7 @@
             // nếu để ajax
             // return true;
             // nếu để chạy thường
-            header("location:index.php?controller=cart");
+            $this->renderHTML("views/frontend/cart.php");
         } 
         public function add_detail(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
@@ -62,6 +70,10 @@
             // print_r($cart);
             // echo '</pre>';
             echo $cart;
+        }
+        public function updateCart(){
+            $total = $this->update();
+            echo $total;
         }
     }
 ?>

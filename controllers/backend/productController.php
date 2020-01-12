@@ -64,5 +64,6 @@
 			$info = $this->info();
 			$this->renderHTML("views/backend/add_product.php",array("info"=>$info,"category"=>$category));
 		}
+		
 	}
  ?>

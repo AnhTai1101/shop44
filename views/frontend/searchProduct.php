@@ -201,15 +201,8 @@
 
 					</div>
 					<!-- Pagination -->
-					<div <?php if($numPage <2) echo "style='display: none;'"; ?> class="pagination flex-m flex-w p-t-26">
-						Trang &nbsp;
-						<?php for( $i =1; $i<= $numPage; $i++): ?>
-						<a href="san-pham/page<?php echo $i; ?>" class="item-pagination flex-c-m trans-0-4 <?php if($i == $page) echo ' active-pagination'; ?>"><?php echo $i; ?></a>
-						<?php endfor; ?>
-						<!-- <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-						<a href="#" class="item-pagination flex-c-m trans-0-4">2</a> -->
-					</div>
-				<?php else: echo " Không có sản phẩm nào trong gian hàng!" ?>
+					
+				<?php else: echo "Rất tiếc..! Không có sản phẩm nào mà bạn tìm kiếm!" ?>
 				<?php endif; ?>
 				</div>
 			</div>

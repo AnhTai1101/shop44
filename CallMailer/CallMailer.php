@@ -47,12 +47,14 @@
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Here is the subject';
-        $mail->Body    = $html;
+        $mail->Body    = $html; // -> trong cartModel
         // $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'Message has been sent';
+        // echo 'Message has been sent';
+        unset($_SESSION['cart']);
+        header("location:callBack");
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }

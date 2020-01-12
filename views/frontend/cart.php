@@ -17,9 +17,11 @@
 								<th class="column-4 p-l-70">Số lượng</th>
 								<th class="column-5">Tổng</th>
 							</tr>
+							<?php if( count($_SESSION['cart']) == 0){echo '<h5>Không có sản phẩm nào trong giỏ hàng của bạn.</h5>';} ?>
 							<?php $total = 0; ?>
 							<?php foreach($_SESSION['cart'] as $cart): ?>
-							<tr class="table-row">
+							<tr  class="table-row">
+							<?php //if( count($_SESSION['cart']) == 0){echo '<h5>Không có sản phẩm nào trong giỏ hàng của bạn.</h5>';} ?>
 								<td class="column-1">
 									<div class="cart-img-product b-rad-4 o-f-hidden">
 										<img src="<?php echo $cart['image']; ?>" alt="IMG-PRODUCT">
@@ -28,14 +30,14 @@
 								<td class="column-2"><?php echo $cart['name']; ?></td>
 								<td class="column-3"><?php echo strrev(chop(chunk_split(strrev($cart['price']),3,"."),".")); ?>đ</td>
 								<td class="column-4">
-									<div class="flex-w bo5 of-hidden w-size17">
-										<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
+									<div id="<?php echo $cart['id']; ?>" class="flex-w bo5 of-hidden w-size17">
+										<button class="btn-num-product-down down color1 flex-c-m size7 bg8 eff2">
 											<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 										</button>
 
 										<input class="size8 m-text18 t-center num-product" type="number" name="number<?php echo $cart['id']; ?>" value="<?php echo $cart['number']; ?>">
 
-										<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+										<button class="btn-num-product-up up color1 flex-c-m size7 bg8 eff2">
 											<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 										</button>
 									</div>
@@ -75,7 +77,7 @@
 					</div>
 				</div>
 
-				<div class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
+				<div <?php if( count($_SESSION['cart']) == 0){echo 'style="display:none;"';} ?> class="flex-w flex-sb-m p-t-25 p-b-25 bo8 p-l-35 p-r-60 p-lr-15-sm">
 					<div class="flex-w flex-m w-full-sm">
 						<!-- <div class="size11 bo4 m-r-10">
 							
@@ -185,7 +187,7 @@
 
 					<div class="size15 trans-0-4">
 						<!-- Button -->
-						<button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+						<button id="hoan-thanh" type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 							Hoàn thành
 						</button>
 					</div>

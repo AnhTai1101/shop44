@@ -69,6 +69,25 @@ $('.block2-btn-addwishlist').each(function() {
         swal(nameProduct, "is added to wishlist !", "success");
     });
 });
+$('.up').each(function(){
+    $(this).on('click',function(){
+        var id = $(this).parent().attr('id');
+        var number = $(this).parent().find('.num-product').value();
+        $.ajax({
+            url : 'gio-hang-cua-ban/updateCart',
+            type : 'post',
+            dateType : 'text',
+            date : {
+                id : id,
+                number : number
+            },
+            success : function(result){
+                $('.num-product').text(result);
+                console.log(result);
+            }
+        });
+    });
+});
 function show_login(){
     $('.fix').toggle(500);
 };
@@ -87,7 +106,7 @@ $('.add-cart-detail').click(function(){
             number : $('#number-product').val()
         },
         success : function(result1){
-            swal("Sản phẩm đã update thành công tại giỏ hàng", "success!");
+            swal("Thêm thành công vào giỏ hàng");
             var nameCart1 = JSON.parse(result1);
             var html1 = '';
             var total1 = 0;
@@ -138,4 +157,7 @@ $('.num-product').click(function(){
             number : $('#number-product').val()
         },
     })
+});
+$('#hoan-thanh').click(function(){
+    swal("Cám ơn bạn đã tin tưởng và đặt mua sản phầm tại shop của chúng tôi <br> Chúng tôi sẽ chuyển hàng đến sớm nhất có thể cho bạn. <br> Bấm oke để tiếp tục mua sắm", "success");
 });

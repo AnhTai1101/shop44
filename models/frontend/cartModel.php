@@ -10,31 +10,26 @@
             return $send;
         }
         public  function updateCart(){
-            $html = '';
+            $totalCart = 0;
+            $html = '<h5>Cám ơn quý khách đã ghé thăm cửa hàng và đặt mua sản phầm. Sau đây là thông tin đơn hàng của quý khách.</h5>';
+            $html .= '<h2>Thông tin đơn hàng</h2>';
+            $html .= '<style> table, th, td { border: 1px solid black; } </style><table> <tr> <th>Tên</th> <th>Số lượng</th> <th> </th> <th>Giá</th> ';
             foreach($_SESSION['cart'] as $cart){
-                $html = '<table style="width:100%">
-                <tr>
-                  <th>Firstname</th>
-                  <th>Lastname</th> 
-                  <th>Age</th>
-                </tr>
-                <tr>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>80</td>
-                </tr>
-              </table>' ;
+                $html .= '<tr>' ;
+                $html .= "<td>". $cart['name']."</td>"; // ->name
+                $html .= "<td>". $cart['number']."</td>"; // ->price
+                $html .= "<td> </td>";
+                $html .= "<td>". $cart['price']."</td>"; // ->number
+                $html .= '</tr>' ;
+                $totalCart += $cart['price']*$cart['number'];
             }
+            $html .= '<tr>' ;
+            $html .= "<td> Tổng:</td>"; // ->name
+            $html .= "<td></td>"; // ->name
+            $html .= "<td> </td>";
+            $html .= "<td>". $totalCart ."</td> .đ"; // ->name
+            $html .= '</tr>' ;
+            $html .= '<h5>Nếu có bất kỳ thắc mắc nào bạn có thể liên hệ với chúng tôi thông qua mail này hoặc gọi điện tới số điện thoại. 0900000990</h5>';
             return $html;
         }
         public function list_product(){
@@ -123,6 +118,12 @@
         // ham xoa toan bo san pham
         public function delete_all(){
             unset($_SESSION['cart']);
+        }
+        public function update(){
+            $id = isset($_POST['id']) ? (int)$_POST['id'] : 0 ;
+            $number = isset($_POST['number']) ? (int)$_POST['number'] : 0 ;
+            $_SESSION['cart'][$id]['number'] = $number;
+            return $_SESSION['cart'][$id]['number']*$_SESSION['cart'][$id]['price']; ;
         }
     }
 ?>

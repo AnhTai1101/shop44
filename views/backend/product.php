@@ -4,14 +4,14 @@
         <!-- DATA TABLE -->
         <h3 class="title-5 m-b-35">Danh sách sản phẩm</h3>
         <br>
-        <br>
         <div class="table-data__tool">
             <div class="table-data__tool-left">
                 <div class="rs-select2--light rs-select2--md">
                     <select class="js-select2" name="property">
-                        <option selected="selected">Tất cả danh mục</option>
-                        <option value="">Quần dài</option>
-                        <option value="">Áo dài</option>
+                        <option selected="selected">Danh mục</option>
+                        <?php foreach($category as $category): ?>
+                        <option value=""><?php echo $category->name; ?></option>
+                        <?php endforeach; ?>
                     </select>
                     <div class="dropDownSelect2"></div>
                 </div>
@@ -31,7 +31,7 @@
             <div class="table-data__tool-right">
                 <a href="index.php?area=backend&controller=product&action=add">
                     <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>add item</button>
+                    <i class="zmdi zmdi-plus"></i>Thêm sản phẩm</button>
                 </a>
                 <!-- <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                     <select class="js-select2" name="type">

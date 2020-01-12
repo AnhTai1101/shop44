@@ -81,5 +81,14 @@
 			$data = $this->model_get($id,$fromRecord,$recordPerPage);
 			$this->renderHTML("views/frontend/homeProduct.php", array("list_category"=>$list_category,"data"=>$data,"numPage"=>$numPage,"total"=>$total,"page"=>$page));
 		}
+		public function search(){
+			$list_category = $this->list_category();
+			$search = $this->searchProduct();
+			$total = count($search);
+			// echo '<pre>';
+			// print_r($search);
+			// echo '</pre>';
+			$this->renderHTML("views/frontend/searchProduct.php",array("total"=>$total,"list_category"=>$list_category,"data"=>$search));
+		}
 	}
  ?>

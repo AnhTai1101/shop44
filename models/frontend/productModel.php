@@ -1,5 +1,14 @@
 <?php
     trait productModel{
+		public function searchProduct(){
+			$search = isset($_POST['search-product']) ? $_POST['search-product'] : 'banhang';
+			$conn = Connection::getInstance();
+            $query = $conn->prepare("select * from product where title like '%$search%'");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute();
+            $info = $query->fetchAll();
+            return $info;
+		}
 		public function list_category(){
             $conn = Connection::getInstance();
             $query = $conn->prepare("select * from categories");
