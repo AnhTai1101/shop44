@@ -177,8 +177,8 @@
 
                             <div class="header-cart-wrapbtn">
                                 <!-- Button -->
-                                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    Thanh toán
+                                <a href="gio-hang-cua-ban/deleteAll" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    Làm mới
                                 </a>
                             </div>
                         </div>
@@ -251,8 +251,8 @@
 
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Thanh toán
+                                    <a href="san-pham/deleteAll" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+										Làm mới
 									</a>
                                 </div>
                             </div>

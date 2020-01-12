@@ -62,6 +62,11 @@
             // nếu để chạy thường
             $this->renderHTML("views/frontend/cart.php");
         } 
+        // xoa gio hang
+        public function deleteAll(){
+            unset($_SESSION['cart']);
+            header("location: http://localhost:8000/PHP44/Project01/san-pham");
+        }
         public function add_detail(){
             $id = isset($_GET['id']) ? (int)$_GET['id'] : 0 ;
             $cart = $this->cart_addDetail($id);
