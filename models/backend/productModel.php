@@ -9,6 +9,15 @@
             $info = $query->fetchAll();
             return $info;
         }
+        public function oneProduct(){
+            $id = isset($_GET['id']) ? $_GET['id'] : 0;
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("SELECT * FROM product WHERE category_id=:id order by id desc");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute(array('id'=>$id));
+            $result = $query->fetchAll();
+            return $result;
+        }
         public function model_total(){
 			//lay bien ket noi csdl
 			$conn = Connection::getInstance();

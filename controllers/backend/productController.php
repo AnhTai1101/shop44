@@ -6,13 +6,20 @@
         {
             $this->Authentication();
 		}
+		public function one_product(){
+			$info = $this->info();
+			$category = $this->list_category();
+			$list_product = $this->oneProduct();
+			$total = count($list_product);
+			$this->renderHTML('views/backend/oneProduct.php',array("list_product"=>$list_product,"info"=>$info,"category"=>$category,"total"=>$total));
+		}
 		public function index(){
 			// $list_product = $this->list_product();
 			$info = $this->info();
 			$category = $this->list_category();
 			//số bản ghi trong 1 trang tất cả danh mục
 			// $page = isset($_GET['page']) ? $_GET['page'] : 1;
-			$recordPerPage = 12;
+			$recordPerPage = 8;
 			//----
 			//phan trang	
 			//tính tổng số tất cả bản nghi

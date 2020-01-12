@@ -14,13 +14,13 @@
                 </div>
                 <div class="au-task js-list-load">
                     <div class="au-task__title">
-                        <p>Có tổng tất cả danh mục</p>
+                        <p>Có tổng tất cả 1 danh mục</p>
                     </div>
                     <div class="au-task-list js-scrollbar3">
                         <div class="au-task__item au-task__item--danger">
                             <div class="au-task__item-inner">
                                 <h5 class="task">
-                                    <a href="#">Meeting about plan for Admin Template 2018</a>
+                                    <a href="#">Miễn phí ship cho tất cả các đơn hàng có giá trị trên 1.5 triệu đồng từ ngày 01-20/01/2019</a>
                                 </h5>
                                 <span class="time">10:00 AM</span>
                             </div>
@@ -111,7 +111,7 @@
                                 </div>
                             </div> -->
                             <?php foreach($category as $categories): ?>
-                            <a href="index.php?area=backend&controller=category&action=list_product&id=<?php echo $categories->id; ?>">
+                            <a href="index.php?area=backend&controller=product&action=one_product&id=<?php echo $categories->id; ?>">
                                 <div class="au-message__item unread">
                                     <div class="au-message__item-inner">
                                         <div class="au-message__item-text">
