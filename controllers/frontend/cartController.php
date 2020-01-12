@@ -25,7 +25,7 @@
             // print_r($_SESSION['CallMailer']);
             $html = $this->updateCart();
             include("CallMailer/CallMailer.php");
-            $this->renderHTML("views/frontend/home.php");
+            header("location: http://localhost:8000/PHP44/Project01/san-pham");
         }
         public function showCart(){
             $this->saveDB();
@@ -36,7 +36,8 @@
         public function update(){
             $update = $this->updateCart();
             $info = $this->info();
-            $this->renderHTML("views/frontend/cart.php",array("info"=>$info));
+            // $this->renderHTML("views/frontend/cart.php",array("info"=>$info));
+            header("location: http://localhost:8000/PHP44/Project01/san-pham");
         }
         // function nhan va gui mail dung php mailer
         public function receiveCart(){

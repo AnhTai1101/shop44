@@ -473,3 +473,23 @@
     - số lượng sản phẩm
     - giá sản phẩm
     - số tiền
+    <div class="flex-w flex-m w-full-sm">
+						<!-- <div class="size11 bo4 m-r-10">
+							
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="coupon-code" placeholder="Mã giảm giá (nếu có)">
+						</div> -->
+						Bạn có thể được giảm giá sản phẩm này tới &nbsp; <span class="text-primary"> 200k</span> &nbsp;
+						<div class="size12 trans-0-4 m-t-10 m-b-10 m-r-10">
+							<!-- Button -->
+							<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+								Áp dụng
+							</button>
+						</div>
+					</div>
+
+					<div class="size10 trans-0-4 m-t-10 m-b-10">
+						<!-- Button -->
+						<button  class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+							Cập nhật
+						</button>
+					</div>

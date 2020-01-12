@@ -95,11 +95,11 @@
                             </li>
 
                             <li>
-                                <a href="san-pham">Shop</a>
+                                <a href="san-pham">Gian hàng</a>
                             </li>
 
                             <li class="sale-noti">
-                                <a href="san-pham">Sale</a>
+                                <a href="san-pham">Giảm giá</a>
                             </li>
 
                             <li>

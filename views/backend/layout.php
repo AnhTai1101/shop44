@@ -187,7 +187,7 @@
                                 <i class="fas fa-chart-bar"></i>Sản phẩm</a>
                         </li>
                         <li>
-                            <a href="assets/backend/table.html">
+                            <a href="index.php?area=backend&controller=order">
                                 <i class="fas fa-table"></i>Đơn hàng</a>
                         </li>
                         <!-- <li>

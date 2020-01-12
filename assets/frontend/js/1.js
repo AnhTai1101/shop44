@@ -159,5 +159,5 @@ $('.num-product').click(function(){
     })
 });
 $('#hoan-thanh').click(function(){
-    swal("Cám ơn bạn đã tin tưởng và đặt mua sản phầm tại shop của chúng tôi <br> Chúng tôi sẽ chuyển hàng đến sớm nhất có thể cho bạn. <br> Bấm oke để tiếp tục mua sắm", "success");
+    swal("Cám ơn bạn đã tin tưởng và đặt mua sản phầm tại shop của chúng tôi. ", "Bấm oke để tiếp tục mua sắm");
 });
