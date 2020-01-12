@@ -15,15 +15,20 @@
         public function callBack(){
             $this->renderHTML("views/frontend/home.php");
         }
+        public function save(){
+            $this->saveDB();
+        }
         public function callMail(){
+            $this->saveDB();
             $send = $this->saveCart();
             $_SESSION['CallMailer'] = $send['email'];
-            print_r($_SESSION['CallMailer']);
+            // print_r($_SESSION['CallMailer']);
             $html = $this->updateCart();
             include("CallMailer/CallMailer.php");
-            // $this->renderHTML("views/frontend/home.php");
+            $this->renderHTML("views/frontend/home.php");
         }
         public function showCart(){
+            $this->saveDB();
             echo '<pre>';
             print_r($_SESSION['cart']);
             echo '</pre>';
@@ -76,9 +81,9 @@
             // echo '</pre>';
             echo $cart;
         }
-        public function updateCart(){
-            $total = $this->update();
-            echo $total;
-        }
+        // public function updateCart(){
+        //     $total = $this->update();
+        //     echo $total;
+        // }
     }
 ?>

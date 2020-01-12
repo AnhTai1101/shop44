@@ -125,5 +125,24 @@
             $_SESSION['cart'][$id]['number'] = $number;
             return $_SESSION['cart'][$id]['number']*$_SESSION['cart'][$id]['price']; ;
         }
+        public function saveDB(){
+            $email = isset($_POST['email']) ? $_POST['email'] : 'e' ;
+            $phone = isset($_POST['phone']) ? $_POST['phone'] : 'phone' ;
+            $product_id = '';
+            $number = '';
+            $price = '';
+            $name = '';
+            foreach($_SESSION['cart'] as $cart){
+                $product_id .= $cart['id'].',';
+                $number .= $cart['number'].',';
+                $price .= $cart['price'].',';
+                $name .= $cart['name'].',';
+            }
+            $date = date('Y/m/d H:i:s');
+            $conn = Connection::getInstance();
+            $query = $conn->prepare("INSERT INTO list_order SET product_id=:product_id, name=:name, number=:number,date=:date,price=:price, email=:email, phone=:phone");
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute(array("email"=>$email,"phone"=>$phone,"name"=>$name,"price"=>$price,"product_id"=>$product_id,"date"=>$date,"number"=>$number));
+        }
     }
 ?>

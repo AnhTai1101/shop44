@@ -5,7 +5,8 @@
 	<!-- Cart -->
 	<section class="cart bgwhite p-t-70 p-b-100">
 		<div class="container">
-			<form action="gio-hang-cua-ban/update" method="POST">
+			<!-- <form action="gio-hang-cua-ban/update" method="POST"> -->
+			<!-- <form action="#" method="POST"> -->
 				<!-- Cart item -->
 				<div class="container-table-cart pos-relative">
 					<div class="wrap-table-shopping-cart bgwhite">
@@ -94,12 +95,12 @@
 
 					<div class="size10 trans-0-4 m-t-10 m-b-10">
 						<!-- Button -->
-						<button type="button" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+						<button  class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 							Cập nhật
 						</button>
 					</div>
 				</div>
-			</form>
+			<!-- </form> -->
 			<!-- Total -->
 			<form action="gio-hang-cua-ban/callMail" method="POST">
 				<div class="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
